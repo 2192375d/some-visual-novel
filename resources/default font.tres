@@ -1,0 +1,9 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://ca7mokf2d0yot"]
+
+[ext_resource type="FontFile" uid="uid://8ruhx4m5mwoq" path="res://assets/friendlyscribbles.ttf" id="1_7n7n0"]
+
+[resource]
+base_font = ExtResource("1_7n7n0")
+spacing_glyph = 3
+spacing_top = 2
+spacing_bottom = 2

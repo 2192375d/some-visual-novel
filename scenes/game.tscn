@@ -1,0 +1,188 @@
+[gd_scene load_steps=9 format=3 uid="uid://c3geab8tymyfl"]
+
+[ext_resource type="Theme" uid="uid://rkogw5413b53" path="res://resources/default theme.tres" id="1_qm0q7"]
+[ext_resource type="Texture2D" uid="uid://durho6r6twfj6" path="res://assets/next icon.png" id="2_2c4b2"]
+[ext_resource type="Script" uid="uid://drvqlfrgep633" path="res://scripts/dialog_box.gd" id="4_rsrar"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_qm0q7"]
+
+[sub_resource type="Theme" id="Theme_6bgtj"]
+
+[sub_resource type="Animation" id="Animation_h5cln"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1088, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(576, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_2c4b2"]
+resource_name = "default"
+length = 0.5
+loop_mode = 2
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(1088, 0, 0, 0.083333336, 0, 1088, 0, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(576, 0, 0, 0.083333336, 0.6666667, 580, 0, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3006v"]
+_data = {
+&"RESET": SubResource("Animation_h5cln"),
+&"default": SubResource("Animation_2c4b2")
+}
+
+[node name="GameInterface" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_qm0q7")
+
+[node name="background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="character" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.49803922)
+layout_mode = 0
+offset_left = 369.0
+offset_right = 755.0
+offset_bottom = 633.0
+expand_mode = 1
+
+[node name="dialogue box background" type="TextureRect" parent="."]
+modulate = Color(0.60784316, 0, 0.25490198, 0.52156866)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.027777778
+anchor_top = 0.6296296
+anchor_right = 0.9722222
+anchor_bottom = 0.9506173
+texture = SubResource("CanvasTexture_qm0q7")
+metadata/_edit_use_anchors_ = true
+
+[node name="dialogue box" type="MarginContainer" parent="."]
+top_level = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.027777778
+anchor_top = 0.6296296
+anchor_right = 0.9722222
+anchor_bottom = 0.9506173
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+script = ExtResource("4_rsrar")
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="dialogue box"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="speaker" type="Label" parent="dialogue box/VBoxContainer"]
+layout_mode = 2
+text = "???"
+horizontal_alignment = 1
+
+[node name="dialogue" type="HBoxContainer" parent="dialogue box/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_6bgtj")
+theme_override_constants/separation = 10
+metadata/_edit_use_anchors_ = true
+
+[node name="content" type="Label" parent="dialogue box/VBoxContainer/dialogue"]
+custom_minimum_size = Vector2(856, 0)
+layout_mode = 2
+size_flags_vertical = 0
+text = "「I am a bee, meow meow meow」"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="dialogue box/VBoxContainer/dialogue"]
+layout_mode = 2
+
+[node name="buttons" type="HBoxContainer" parent="dialogue box/VBoxContainer"]
+layout_mode = 2
+
+[node name="save" type="Button" parent="dialogue box/VBoxContainer/buttons"]
+layout_mode = 2
+text = "save"
+
+[node name="load" type="Button" parent="dialogue box/VBoxContainer/buttons"]
+layout_mode = 2
+text = "load"
+
+[node name="auto" type="Button" parent="dialogue box/VBoxContainer/buttons"]
+layout_mode = 2
+text = "auto"
+
+[node name="settings" type="Button" parent="dialogue box/VBoxContainer/buttons"]
+layout_mode = 2
+text = "settings"
+
+[node name="next icon" type="TextureRect" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.9140625
+anchor_top = 0.8410494
+anchor_right = 0.9140625
+anchor_bottom = 0.8410494
+offset_left = 35.0
+offset_top = 31.0
+offset_right = 35.0
+offset_bottom = 31.0
+size_flags_vertical = 8
+texture = ExtResource("2_2c4b2")
+expand_mode = 1
+stretch_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="next icon"]
+libraries = {
+&"": SubResource("AnimationLibrary_3006v")
+}
+autoplay = "default"

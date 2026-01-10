@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://rkogw5413b53"]
+
+[ext_resource type="FontVariation" uid="uid://ca7mokf2d0yot" path="res://resources/default font.tres" id="1_t2ujq"]
+
+[resource]
+default_font = ExtResource("1_t2ujq")
+Button/font_sizes/font_size = 20

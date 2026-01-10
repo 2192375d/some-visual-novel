@@ -1,0 +1,97 @@
+[gd_scene load_steps=6 format=3 uid="uid://cq6s3qrsxp0dv"]
+
+[ext_resource type="Theme" uid="uid://rkogw5413b53" path="res://resources/default theme.tres" id="1_5hgee"]
+[ext_resource type="Script" uid="uid://68d27dso5nol" path="res://scripts/main_menu_buttons.gd" id="2_xsilq"]
+[ext_resource type="PackedScene" uid="uid://c3geab8tymyfl" path="res://scenes/game.tscn" id="3_12vek"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_uqkwj"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5hgee"]
+
+[node name="main menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.41551143, 0.81812185, 1, 1)
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = SubResource("CanvasTexture_uqkwj")
+
+[node name="buttons" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_5hgee")
+theme_override_styles/panel = SubResource("StyleBoxTexture_5hgee")
+script = ExtResource("2_xsilq")
+game_scene = ExtResource("3_12vek")
+
+[node name="Label" type="Label" parent="buttons"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.11111111
+anchor_top = 0.11111111
+anchor_right = 0.3064236
+anchor_bottom = 0.17283951
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 40
+text = "GAME TITLE"
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="buttons"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.11111111
+anchor_top = 0.2962963
+anchor_right = 0.27083334
+anchor_bottom = 0.6234567
+offset_bottom = 3.0517578e-05
+metadata/_edit_use_anchors_ = true
+
+[node name="new game" type="Button" parent="buttons/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = " new game"
+alignment = 0
+
+[node name="load save" type="Button" parent="buttons/VBoxContainer"]
+layout_mode = 2
+text = " load save"
+alignment = 0
+
+[node name="progress" type="Button" parent="buttons/VBoxContainer"]
+layout_mode = 2
+text = " ???"
+alignment = 0
+
+[node name="settings" type="Button" parent="buttons/VBoxContainer"]
+layout_mode = 2
+text = " settings"
+alignment = 0
+
+[node name="extra stuffs" type="Button" parent="buttons/VBoxContainer"]
+layout_mode = 2
+text = " extra stuffs"
+alignment = 0
+
+[node name="music room" type="Button" parent="buttons/VBoxContainer"]
+layout_mode = 2
+text = " music room"
+alignment = 0
+
+[node name="quit" type="Button" parent="buttons/VBoxContainer"]
+layout_mode = 2
+text = " quit"
+alignment = 0
+
+[connection signal="pressed" from="buttons/VBoxContainer/new game" to="buttons" method="_on_new_game_pressed"]
