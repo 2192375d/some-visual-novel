@@ -14,5 +14,5 @@ func _on_new_game_pressed() -> void:
 func _on_load_save_pressed() -> void:
 	get_parent().add_child(load_menu)
 
-func _ready() -> void:
-	pass
+func _on_quit_pressed() -> void:
+	get_tree().quit()

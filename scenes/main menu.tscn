@@ -98,3 +98,4 @@ alignment = 0
 
 [connection signal="pressed" from="buttons/VBoxContainer/new game" to="buttons" method="_on_new_game_pressed"]
 [connection signal="pressed" from="buttons/VBoxContainer/load save" to="buttons" method="_on_load_save_pressed"]
+[connection signal="pressed" from="buttons/VBoxContainer/quit" to="buttons" method="_on_quit_pressed"]
