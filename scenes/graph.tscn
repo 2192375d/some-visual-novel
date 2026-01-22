@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dlbr4ifm4epyc"]
 
-[ext_resource type="Script" uid="uid://7vox103nw4yh" path="res://scripts/graph/camera_2d.gd" id="1_6llor"]
+[ext_resource type="Script" uid="uid://7vox103nw4yh" path="res://scripts/graph/graph_camera.gd" id="1_6llor"]
 [ext_resource type="Script" uid="uid://dylrnrloh1u5w" path="res://scripts/graph/sub_chapter_node.gd" id="2_vi2vj"]
 
 [sub_resource type="Gradient" id="Gradient_6llor"]
