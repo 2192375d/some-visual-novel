@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://jk2ibud77nv"]
+
+[ext_resource type="Script" uid="uid://d3f64rleustek" path="res://scripts/loading_screen.gd" id="1_hprjd"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_hprjd"]
+
+[node name="loading screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hprjd")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+self_modulate = Color(0.1254902, 0.101960786, 1, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_hprjd")
+
+[node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7378472
+anchor_top = 0.8441358
+anchor_right = 0.93315995
+anchor_bottom = 0.9506173
+offset_right = -150.00018
+offset_bottom = -46.00006
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+text = "loading...."
+metadata/_edit_use_anchors_ = true

@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://8ruhx4m5mwoq"
-path="res://.godot/imported/friendlyscribbles.ttf-f3865cd6a489822bcd902675a2098d06.fontdata"
+path="res://.godot/imported/friendlyscribbles.ttf-9945614e70cdbf3e2915ee7cc9a2b2f7.fontdata"
 
 [deps]
 
-source_file="res://assets/friendlyscribbles.ttf"
-dest_files=["res://.godot/imported/friendlyscribbles.ttf-f3865cd6a489822bcd902675a2098d06.fontdata"]
+source_file="res://assets/font/friendlyscribbles.ttf"
+dest_files=["res://.godot/imported/friendlyscribbles.ttf-9945614e70cdbf3e2915ee7cc9a2b2f7.fontdata"]
 
 [params]
 

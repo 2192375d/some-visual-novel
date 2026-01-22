@@ -1,8 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://c3geab8tymyfl"]
+[gd_scene load_steps=12 format=3 uid="uid://c3geab8tymyfl"]
 
 [ext_resource type="Theme" uid="uid://rkogw5413b53" path="res://resources/default theme.tres" id="1_qm0q7"]
 [ext_resource type="Texture2D" uid="uid://durho6r6twfj6" path="res://assets/next icon.png" id="2_2c4b2"]
-[ext_resource type="Script" uid="uid://drvqlfrgep633" path="res://scripts/dialog_box.gd" id="4_rsrar"]
+[ext_resource type="Script" uid="uid://ct36chiqd5csc" path="res://scripts/game/game.gd" id="2_gee14"]
+[ext_resource type="PackedScene" uid="uid://bfr6fwnwt4s17" path="res://scenes/load menu/load_menu.tscn" id="3_p57ef"]
+[ext_resource type="Script" uid="uid://cdajyhid7ogap" path="res://scripts/game/game_runner.gd" id="4_lbhrr"]
+[ext_resource type="Script" uid="uid://drvqlfrgep633" path="res://scripts/game/dialog_box.gd" id="4_rsrar"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_qm0q7"]
 
@@ -66,7 +69,7 @@ _data = {
 &"default": SubResource("Animation_2c4b2")
 }
 
-[node name="GameInterface" type="Control"]
+[node name="Game" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -74,6 +77,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_qm0q7")
+script = ExtResource("2_gee14")
+load_menu_scene = ExtResource("3_p57ef")
+
+[node name="GameRunner" type="Node" parent="." node_paths=PackedStringArray("dialogue_box", "character_illustration")]
+script = ExtResource("4_lbhrr")
+dialogue_box = NodePath("../dialogue box")
+character_illustration = NodePath("../character")
+metadata/_custom_type_script = "uid://cdajyhid7ogap"
 
 [node name="background" type="TextureRect" parent="."]
 layout_mode = 1
@@ -102,7 +113,7 @@ anchor_bottom = 0.9506173
 texture = SubResource("CanvasTexture_qm0q7")
 metadata/_edit_use_anchors_ = true
 
-[node name="dialogue box" type="MarginContainer" parent="."]
+[node name="dialogue box" type="MarginContainer" parent="." node_paths=PackedStringArray("speaker_label", "content_label")]
 top_level = true
 layout_mode = 1
 anchors_preset = -1
@@ -117,6 +128,8 @@ theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 script = ExtResource("4_rsrar")
+speaker_label = NodePath("VBoxContainer/speaker")
+content_label = NodePath("VBoxContainer/dialogue/content")
 metadata/_edit_use_anchors_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="dialogue box"]
@@ -139,7 +152,7 @@ metadata/_edit_use_anchors_ = true
 custom_minimum_size = Vector2(856, 0)
 layout_mode = 2
 size_flags_vertical = 0
-text = "「I am a bee, meow meow meow」"
+autowrap_mode = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="dialogue box/VBoxContainer/dialogue"]
 layout_mode = 2
@@ -147,13 +160,13 @@ layout_mode = 2
 [node name="buttons" type="HBoxContainer" parent="dialogue box/VBoxContainer"]
 layout_mode = 2
 
-[node name="save" type="Button" parent="dialogue box/VBoxContainer/buttons"]
+[node name="save_load" type="Button" parent="dialogue box/VBoxContainer/buttons"]
 layout_mode = 2
-text = "save"
+text = "save/load"
 
-[node name="load" type="Button" parent="dialogue box/VBoxContainer/buttons"]
+[node name="quick save" type="Button" parent="dialogue box/VBoxContainer/buttons"]
 layout_mode = 2
-text = "load"
+text = "quick save"
 
 [node name="auto" type="Button" parent="dialogue box/VBoxContainer/buttons"]
 layout_mode = 2
@@ -186,3 +199,6 @@ libraries = {
 &"": SubResource("AnimationLibrary_3006v")
 }
 autoplay = "default"
+
+[connection signal="subchapter_complete" from="GameRunner" to="." method="_on_game_runner_subchapter_complete"]
+[connection signal="pressed" from="dialogue box/VBoxContainer/buttons/save_load" to="." method="_on_save_load_pressed"]

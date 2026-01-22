@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cq6s3qrsxp0dv"]
+[gd_scene load_steps=7 format=3 uid="uid://cq6s3qrsxp0dv"]
 
 [ext_resource type="Theme" uid="uid://rkogw5413b53" path="res://resources/default theme.tres" id="1_5hgee"]
-[ext_resource type="Script" uid="uid://68d27dso5nol" path="res://scripts/main_menu_buttons.gd" id="2_xsilq"]
-[ext_resource type="PackedScene" uid="uid://c3geab8tymyfl" path="res://scenes/game.tscn" id="3_12vek"]
+[ext_resource type="Script" uid="uid://68d27dso5nol" path="res://scripts/main menu/main_menu_buttons.gd" id="2_xsilq"]
+[ext_resource type="PackedScene" uid="uid://jk2ibud77nv" path="res://scenes/loading_screen.tscn" id="3_12vek"]
+[ext_resource type="PackedScene" uid="uid://bfr6fwnwt4s17" path="res://scenes/load menu/load_menu.tscn" id="4_vsw8r"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_uqkwj"]
 
@@ -33,7 +34,8 @@ grow_vertical = 2
 theme = ExtResource("1_5hgee")
 theme_override_styles/panel = SubResource("StyleBoxTexture_5hgee")
 script = ExtResource("2_xsilq")
-game_scene = ExtResource("3_12vek")
+loading_screen_scene = ExtResource("3_12vek")
+load_menu_scene = ExtResource("4_vsw8r")
 
 [node name="Label" type="Label" parent="buttons"]
 layout_mode = 1
@@ -95,3 +97,4 @@ text = " quit"
 alignment = 0
 
 [connection signal="pressed" from="buttons/VBoxContainer/new game" to="buttons" method="_on_new_game_pressed"]
+[connection signal="pressed" from="buttons/VBoxContainer/load save" to="buttons" method="_on_load_save_pressed"]
