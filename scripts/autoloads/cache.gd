@@ -8,6 +8,7 @@ extends Node
 @onready var current_subchapter: Subchapter = null
 
 @onready var game_playing: bool = false
+@onready var block_index: int = 0
 
 func get_character(character_enum: Enums.CharacterEnum) -> Character:
 	var character: Character
@@ -33,3 +34,16 @@ func set_subchapter_enum_to_load(new_subchapter_enum_to_load: Enums.SubchapterEn
 
 func get_subchapter_enum_to_load() -> Enums.SubchapterEnum:
 	return subchapter_enum_to_load
+
+func get_block_index() -> int:
+	return block_index
+
+func set_block_index(new_block_index: int) -> void:
+	block_index = new_block_index
+
+func reset_block_index() -> void:
+	set_block_index(0)
+
+
+func increment_block_index() -> void:
+	block_index += 1

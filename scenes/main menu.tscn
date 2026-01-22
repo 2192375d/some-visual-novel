@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cq6s3qrsxp0dv"]
+[gd_scene load_steps=8 format=3 uid="uid://cq6s3qrsxp0dv"]
 
 [ext_resource type="Theme" uid="uid://rkogw5413b53" path="res://resources/default theme.tres" id="1_5hgee"]
+[ext_resource type="Script" uid="uid://bt8bsekgrn8ph" path="res://scripts/main_menu.gd" id="1_km7eu"]
 [ext_resource type="Script" uid="uid://68d27dso5nol" path="res://scripts/main menu/main_menu_buttons.gd" id="2_xsilq"]
 [ext_resource type="PackedScene" uid="uid://jk2ibud77nv" path="res://scenes/loading_screen.tscn" id="3_12vek"]
 [ext_resource type="PackedScene" uid="uid://bfr6fwnwt4s17" path="res://scenes/load menu/load_menu.tscn" id="4_vsw8r"]
@@ -16,6 +17,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_km7eu")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 modulate = Color(0.41551143, 0.81812185, 1, 1)

@@ -6,11 +6,13 @@
 
 [sub_resource type="ImageTexture" id="ImageTexture_2gvld"]
 
-[node name="load_menu" type="CanvasLayer" node_paths=PackedStringArray("back_to_main_menu_button", "blur_rectangle")]
+[node name="load_menu" type="CanvasLayer" node_paths=PackedStringArray("back_to_main_menu_button", "blur_rectangle", "grid_container", "check_button")]
 layer = 2
 script = ExtResource("1_2gvld")
 back_to_main_menu_button = NodePath("PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/back to main menu")
 blur_rectangle = NodePath("ColorRect")
+grid_container = NodePath("PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/GridContainer")
+check_button = NodePath("PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/CheckButton")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
@@ -56,6 +58,10 @@ layout_mode = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 
+[node name="CheckButton" type="CheckButton" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "load mod"
+
 [node name="Button1" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "page 1"
@@ -96,41 +102,52 @@ text = "page 9"
 layout_mode = 2
 columns = 3
 
-[node name="save_slot" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/GridContainer" instance=ExtResource("2_2gvld")]
+[node name="save_slot1" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/GridContainer" instance=ExtResource("2_2gvld")]
 layout_mode = 2
 
 [node name="save_slot2" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/GridContainer" instance=ExtResource("2_2gvld")]
 layout_mode = 2
+index = 1
 
 [node name="save_slot3" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/GridContainer" instance=ExtResource("2_2gvld")]
 layout_mode = 2
+index = 2
 
 [node name="save_slot4" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/GridContainer" instance=ExtResource("2_2gvld")]
 layout_mode = 2
+index = 3
 
 [node name="save_slot5" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/GridContainer" instance=ExtResource("2_2gvld")]
 layout_mode = 2
+index = 4
 
 [node name="save_slot6" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/GridContainer" instance=ExtResource("2_2gvld")]
 layout_mode = 2
+index = 5
 
 [node name="save_slot7" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/GridContainer" instance=ExtResource("2_2gvld")]
 layout_mode = 2
+index = 6
 
 [node name="save_slot8" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/GridContainer" instance=ExtResource("2_2gvld")]
 layout_mode = 2
+index = 7
 
 [node name="save_slot9" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/GridContainer" instance=ExtResource("2_2gvld")]
 layout_mode = 2
+index = 8
 
 [node name="save_slot10" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/GridContainer" instance=ExtResource("2_2gvld")]
 layout_mode = 2
+index = 9
 
 [node name="save_slot11" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/GridContainer" instance=ExtResource("2_2gvld")]
 layout_mode = 2
+index = 10
 
 [node name="save_slot12" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/GridContainer" instance=ExtResource("2_2gvld")]
 layout_mode = 2
+index = 11
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -149,4 +166,6 @@ expand_mode = 2
 layout_mode = 2
 text = "go back"
 
+[connection signal="toggled" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/back to main menu" to="." method="_on_back_to_main_menu_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/go back" to="." method="_on_go_back_pressed"]

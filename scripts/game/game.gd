@@ -3,8 +3,6 @@ extends Control
 @export_group("FIXED")
 @export var load_menu_scene: PackedScene
 
-@onready var load_menu: CanvasLayer = load_menu_scene.instantiate()
-
 func _on_game_runner_subchapter_complete() -> void:
 	var connections: Array[Connection] = Cache.get_subchapter().connections
 	if connections.size() == 0:
@@ -15,6 +13,6 @@ func _on_game_runner_subchapter_complete() -> void:
 	else:
 		printerr("multiple connection functionality not implementated yet")
 
-
 func _on_save_load_pressed() -> void:
+	var load_menu: CanvasLayer = load_menu_scene.instantiate()
 	add_child(load_menu)

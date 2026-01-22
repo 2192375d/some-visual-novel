@@ -2,7 +2,6 @@ extends Node
 class_name GameRunner
 
 @onready var current_subchapter: Subchapter = Cache.get_subchapter()
-@onready var index: int = 0
 
 @export_group("FIXED")
 @export var dialogue_box: DialogueBox
@@ -21,15 +20,15 @@ func process_block(current_block: Block):
 		print("choice block not handled yet")
 
 func _ready() -> void:
-	process_block(current_subchapter.blocks[0])
+	process_block(current_subchapter.blocks[Cache.block_index])
 
 func _unhandled_input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("confirm"):
-		index += 1
+		Cache.increment_block_index()
 		
-		if index >= current_subchapter.blocks.size():
+		if Cache.get_block_index() >= current_subchapter.blocks.size():
 			subchapter_complete.emit()
 			print("chapter complete")
 			return
 		
-		process_block(current_subchapter.blocks[index])
+		process_block(current_subchapter.blocks[Cache.get_block_index()])

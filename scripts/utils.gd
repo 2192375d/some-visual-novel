@@ -14,3 +14,14 @@ static func get_subchapter(subchapter_enum: Enums.SubchapterEnum) -> Subchapter:
 	
 	var sub_chapter: Subchapter = load(path)
 	return sub_chapter
+
+
+static func unix_time_int_to_string(unix_time_int: int) -> String:
+	var unix_time: Dictionary = Time.get_datetime_dict_from_unix_time(unix_time_int)
+	return "%04d-%02d-%02d %02d:%02d" % [
+		unix_time.year, 
+		unix_time.month, 
+		unix_time.day, 
+		unix_time.hour, 
+		unix_time.minute
+	]

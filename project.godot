@@ -20,6 +20,13 @@ config/icon="res://icon.svg"
 Enums="*res://scripts/autoloads/enums.gd"
 Cache="*res://scripts/autoloads/cache.gd"
 SceneFlow="*res://scripts/autoloads/scene_flow.gd"
+SaveManager="*res://scripts/autoloads/save_manager.gd"
+
+[display]
+
+window/size/borderless=true
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [input]
 
