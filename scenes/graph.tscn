@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://dlbr4ifm4epyc"]
+
+[ext_resource type="Script" uid="uid://7vox103nw4yh" path="res://scripts/graph/graph_camera.gd" id="1_6llor"]
+[ext_resource type="Script" uid="uid://dylrnrloh1u5w" path="res://scripts/graph/sub_chapter_node.gd" id="2_vi2vj"]
+
+[sub_resource type="Gradient" id="Gradient_6llor"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vi2vj"]
+gradient = SubResource("Gradient_6llor")
+fill_from = Vector2(0.5, 0.5)
+metadata/_snap_enabled = true
+
+[node name="Graph" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(364, 245)
+zoom = Vector2(1.5, 1.5)
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
+script = ExtResource("1_6llor")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+self_modulate = Color(1, 1, 1, 0.3529412)
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = SubResource("GradientTexture2D_vi2vj")
+
+[node name="subchapter_nodes" type="Node" parent="."]
+
+[node name="subchapter_node1" type="Node2D" parent="subchapter_nodes"]
+position = Vector2(245, 174)
+script = ExtResource("2_vi2vj")
+metadata/_custom_type_script = "uid://dylrnrloh1u5w"
+
+[node name="Label" type="Label" parent="subchapter_nodes/subchapter_node1"]
+offset_left = -4.0
+offset_top = 16.0
+offset_right = 20.0
+offset_bottom = 30.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "sub1"
+
+[node name="Button" type="Button" parent="subchapter_nodes/subchapter_node1"]
+offset_right = 16.0
+offset_bottom = 16.0
