@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cq6s3qrsxp0dv"]
+[gd_scene format=3 uid="uid://cq6s3qrsxp0dv"]
 
 [ext_resource type="Theme" uid="uid://rkogw5413b53" path="res://resources/default theme.tres" id="1_5hgee"]
 [ext_resource type="Script" uid="uid://bt8bsekgrn8ph" path="res://scripts/main_menu.gd" id="1_km7eu"]
@@ -10,7 +10,7 @@
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5hgee"]
 
-[node name="main menu" type="Control"]
+[node name="main menu" type="Control" unique_id=400018571]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -19,14 +19,14 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_km7eu")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1083760904]
 modulate = Color(0.41551143, 0.81812185, 1, 1)
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
 texture = SubResource("CanvasTexture_uqkwj")
 
-[node name="buttons" type="Panel" parent="."]
+[node name="buttons" type="Panel" parent="." unique_id=1790973865]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -39,7 +39,7 @@ script = ExtResource("2_xsilq")
 loading_screen_scene = ExtResource("3_12vek")
 load_menu_scene = ExtResource("4_vsw8r")
 
-[node name="Label" type="Label" parent="buttons"]
+[node name="Label" type="Label" parent="buttons" unique_id=1704329793]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.11111111
@@ -52,7 +52,7 @@ theme_override_font_sizes/font_size = 40
 text = "GAME TITLE"
 metadata/_edit_use_anchors_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="buttons"]
+[node name="VBoxContainer" type="VBoxContainer" parent="buttons" unique_id=1220061873]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.11111111
@@ -63,38 +63,38 @@ offset_right = -0.1920166
 offset_bottom = -35.992035
 metadata/_edit_use_anchors_ = true
 
-[node name="new game" type="Button" parent="buttons/VBoxContainer"]
+[node name="new game" type="Button" parent="buttons/VBoxContainer" unique_id=1361503303]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = " new game"
 alignment = 0
 
-[node name="load save" type="Button" parent="buttons/VBoxContainer"]
+[node name="load save" type="Button" parent="buttons/VBoxContainer" unique_id=2023170312]
 layout_mode = 2
 text = " load save"
 alignment = 0
 
-[node name="progress" type="Button" parent="buttons/VBoxContainer"]
+[node name="progress" type="Button" parent="buttons/VBoxContainer" unique_id=1517199358]
 layout_mode = 2
 text = " ???"
 alignment = 0
 
-[node name="settings" type="Button" parent="buttons/VBoxContainer"]
+[node name="settings" type="Button" parent="buttons/VBoxContainer" unique_id=1197711462]
 layout_mode = 2
 text = " settings"
 alignment = 0
 
-[node name="extra stuffs" type="Button" parent="buttons/VBoxContainer"]
+[node name="extra stuffs" type="Button" parent="buttons/VBoxContainer" unique_id=288917353]
 layout_mode = 2
 text = " extra stuffs"
 alignment = 0
 
-[node name="music room" type="Button" parent="buttons/VBoxContainer"]
+[node name="music room" type="Button" parent="buttons/VBoxContainer" unique_id=1359814921]
 layout_mode = 2
 text = " music room"
 alignment = 0
 
-[node name="quit" type="Button" parent="buttons/VBoxContainer"]
+[node name="quit" type="Button" parent="buttons/VBoxContainer" unique_id=1981599554]
 layout_mode = 2
 text = " quit"
 alignment = 0

@@ -1,10 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://jk2ibud77nv"]
+[gd_scene format=3 uid="uid://jk2ibud77nv"]
 
 [ext_resource type="Script" uid="uid://d3f64rleustek" path="res://scripts/loading_screen.gd" id="1_hprjd"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_hprjd"]
 
-[node name="loading screen" type="Control"]
+[node name="loading screen" type="Control" unique_id=2139774279]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,7 +13,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hprjd")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1395116762]
 self_modulate = Color(0.1254902, 0.101960786, 1, 1)
 layout_mode = 1
 anchors_preset = 15
@@ -23,7 +23,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("CanvasTexture_hprjd")
 
-[node name="Label" type="Label" parent="TextureRect"]
+[node name="Label" type="Label" parent="TextureRect" unique_id=1931321771]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.7378472
