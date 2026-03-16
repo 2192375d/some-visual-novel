@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c3geab8tymyfl"]
+[gd_scene format=3 uid="uid://c3geab8tymyfl"]
 
 [ext_resource type="Theme" uid="uid://rkogw5413b53" path="res://resources/default theme.tres" id="1_qm0q7"]
 [ext_resource type="Texture2D" uid="uid://durho6r6twfj6" path="res://assets/next icon.png" id="2_2c4b2"]
@@ -69,7 +69,7 @@ _data = {
 &"default": SubResource("Animation_2c4b2")
 }
 
-[node name="Game" type="Control"]
+[node name="Game" type="Control" unique_id=917513168]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -80,13 +80,13 @@ theme = ExtResource("1_qm0q7")
 script = ExtResource("2_gee14")
 load_menu_scene = ExtResource("3_p57ef")
 
-[node name="GameRunner" type="Node" parent="." node_paths=PackedStringArray("dialogue_box", "character_illustration")]
+[node name="GameRunner" type="Node" parent="." unique_id=53986316 node_paths=PackedStringArray("dialogue_box", "character_illustration")]
 script = ExtResource("4_lbhrr")
 dialogue_box = NodePath("../dialogue box")
 character_illustration = NodePath("../character")
 metadata/_custom_type_script = "uid://cdajyhid7ogap"
 
-[node name="background" type="TextureRect" parent="."]
+[node name="background" type="TextureRect" parent="." unique_id=163258640]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -94,7 +94,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="character" type="TextureRect" parent="."]
+[node name="character" type="TextureRect" parent="." unique_id=1823453139]
 modulate = Color(1, 1, 1, 0.49803922)
 layout_mode = 0
 offset_left = 369.0
@@ -102,7 +102,7 @@ offset_right = 755.0
 offset_bottom = 633.0
 expand_mode = 1
 
-[node name="dialogue box background" type="TextureRect" parent="."]
+[node name="dialogue box background" type="TextureRect" parent="." unique_id=417551111]
 modulate = Color(0.60784316, 0, 0.25490198, 0.52156866)
 layout_mode = 1
 anchors_preset = -1
@@ -113,7 +113,7 @@ anchor_bottom = 0.9506173
 texture = SubResource("CanvasTexture_qm0q7")
 metadata/_edit_use_anchors_ = true
 
-[node name="dialogue box" type="MarginContainer" parent="." node_paths=PackedStringArray("speaker_label", "content_label")]
+[node name="dialogue box" type="MarginContainer" parent="." unique_id=1413226337 node_paths=PackedStringArray("speaker_label", "content_label")]
 top_level = true
 layout_mode = 1
 anchors_preset = -1
@@ -132,51 +132,51 @@ speaker_label = NodePath("VBoxContainer/speaker")
 content_label = NodePath("VBoxContainer/dialogue/content")
 metadata/_edit_use_anchors_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="dialogue box"]
+[node name="VBoxContainer" type="VBoxContainer" parent="dialogue box" unique_id=1372363062]
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="speaker" type="Label" parent="dialogue box/VBoxContainer"]
+[node name="speaker" type="Label" parent="dialogue box/VBoxContainer" unique_id=613315138]
 layout_mode = 2
 text = "???"
 horizontal_alignment = 1
 
-[node name="dialogue" type="HBoxContainer" parent="dialogue box/VBoxContainer"]
+[node name="dialogue" type="HBoxContainer" parent="dialogue box/VBoxContainer" unique_id=2054221476]
 layout_mode = 2
 size_flags_vertical = 3
 theme = SubResource("Theme_6bgtj")
 theme_override_constants/separation = 10
 metadata/_edit_use_anchors_ = true
 
-[node name="content" type="Label" parent="dialogue box/VBoxContainer/dialogue"]
+[node name="content" type="Label" parent="dialogue box/VBoxContainer/dialogue" unique_id=1268542657]
 custom_minimum_size = Vector2(856, 0)
 layout_mode = 2
 size_flags_vertical = 0
 autowrap_mode = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="dialogue box/VBoxContainer/dialogue"]
+[node name="VBoxContainer" type="VBoxContainer" parent="dialogue box/VBoxContainer/dialogue" unique_id=1404732780]
 layout_mode = 2
 
-[node name="buttons" type="HBoxContainer" parent="dialogue box/VBoxContainer"]
+[node name="buttons" type="HBoxContainer" parent="dialogue box/VBoxContainer" unique_id=1163853665]
 layout_mode = 2
 
-[node name="save_load" type="Button" parent="dialogue box/VBoxContainer/buttons"]
+[node name="save_load" type="Button" parent="dialogue box/VBoxContainer/buttons" unique_id=62097338]
 layout_mode = 2
 text = "save/load"
 
-[node name="quick save" type="Button" parent="dialogue box/VBoxContainer/buttons"]
+[node name="quick save" type="Button" parent="dialogue box/VBoxContainer/buttons" unique_id=450151022]
 layout_mode = 2
 text = "quick save"
 
-[node name="auto" type="Button" parent="dialogue box/VBoxContainer/buttons"]
+[node name="auto" type="Button" parent="dialogue box/VBoxContainer/buttons" unique_id=1713157343]
 layout_mode = 2
 text = "auto"
 
-[node name="settings" type="Button" parent="dialogue box/VBoxContainer/buttons"]
+[node name="settings" type="Button" parent="dialogue box/VBoxContainer/buttons" unique_id=1978118742]
 layout_mode = 2
 text = "settings"
 
-[node name="next icon" type="TextureRect" parent="."]
+[node name="next icon" type="TextureRect" parent="." unique_id=2093410541]
 z_index = 1
 layout_mode = 1
 anchors_preset = -1
@@ -194,11 +194,9 @@ expand_mode = 1
 stretch_mode = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="next icon"]
-libraries = {
-&"": SubResource("AnimationLibrary_3006v")
-}
-autoplay = "default"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="next icon" unique_id=1491895378]
+libraries/ = SubResource("AnimationLibrary_3006v")
+autoplay = &"default"
 
 [connection signal="subchapter_complete" from="GameRunner" to="." method="_on_game_runner_subchapter_complete"]
 [connection signal="pressed" from="dialogue box/VBoxContainer/buttons/save_load" to="." method="_on_save_load_pressed"]

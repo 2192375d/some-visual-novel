@@ -44,6 +44,5 @@ func set_block_index(new_block_index: int) -> void:
 func reset_block_index() -> void:
 	set_block_index(0)
 
-
 func increment_block_index() -> void:
 	block_index += 1
