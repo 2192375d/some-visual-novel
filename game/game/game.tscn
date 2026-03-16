@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://dc3cao46b0ye0"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_wwx06"]
+
+[node name="GameScreen" type="Control" unique_id=924444583]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="." unique_id=428439433]
+modulate = Color(1, 1, 1, 0.38431373)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_wwx06")
+
+[node name="DialogueBox" type="MarginContainer" parent="." unique_id=1001218058]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -207.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DialogueBox" unique_id=2031320899]
+layout_mode = 2
+
+[node name="Speaker" type="Label" parent="DialogueBox/VBoxContainer" unique_id=282850077]
+layout_mode = 2
+text = "character"
+horizontal_alignment = 1
+
+[node name="Dialogue" type="HBoxContainer" parent="DialogueBox/VBoxContainer" unique_id=597847136]
+layout_mode = 2
+
+[node name="Content" type="Label" parent="DialogueBox/VBoxContainer/Dialogue" unique_id=848084838]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DialogueBox/VBoxContainer/Dialogue" unique_id=675721989]
+layout_mode = 2
+
+[node name="Buttons" type="HBoxContainer" parent="DialogueBox/VBoxContainer" unique_id=1938405714]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="DialogueBox/VBoxContainer/Buttons" unique_id=2120936257]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+text = "button"
