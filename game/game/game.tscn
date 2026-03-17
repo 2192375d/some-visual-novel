@@ -1,14 +1,17 @@
 [gd_scene format=3 uid="uid://dc3cao46b0ye0"]
 
+[ext_resource type="Script" uid="uid://cyw3agwr5v4o3" path="res://game/game/game.gd" id="1_5t5jc"]
+
 [sub_resource type="CanvasTexture" id="CanvasTexture_wwx06"]
 
-[node name="GameScreen" type="Control" unique_id=924444583]
+[node name="Game" type="Control" unique_id=924444583]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_5t5jc")
 
 [node name="Background" type="TextureRect" parent="." unique_id=428439433]
 modulate = Color(1, 1, 1, 0.38431373)

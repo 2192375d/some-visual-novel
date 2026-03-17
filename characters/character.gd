@@ -1,3 +1,5 @@
+# data container for the character
+
 extends Resource
 
 class_name Character

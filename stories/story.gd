@@ -2,4 +2,4 @@ extends Resource
 
 class_name Story
 
-@export var blocks: Array[Block]
+@export var story_lines: Array[StoryLine]

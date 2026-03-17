@@ -1,7 +1,13 @@
-extends Node
+# responsible to store the states of the game
 
-var index1: int = 0
-var index2: int = 0
+extends RefCounted
+
+var index1: int
+var index2: int
+
+func _init() -> void:
+	index1 = 0
+	index2 = 0
 
 func increment_index1() -> void:
 	index1 += 1

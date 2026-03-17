@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://deb4nm5ey04jc" path="res://game/loading_screen/loading_screen.gd" id="1_oegrr"]
 
-[node name="LoadingScreen" type="Control" unique_id=681749991]
+[node name="LoadingScreen" type="Control" unique_id=372193500]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,3 +10,4 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_oegrr")
+metadata/_custom_type_script = "uid://deb4nm5ey04jc"
