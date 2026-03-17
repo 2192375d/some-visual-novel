@@ -11,15 +11,22 @@ config_version=5
 [application]
 
 config/name="Some Visual Novel (again)"
+run/main_scene="uid://qc2yi6n1djk7"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-Enums="*uid://b81eygb2bgr3s"
-GameState="uid://f1nrnruyov1r"
-StaticDB="*uid://c46xrnlyxdesm"
-Constants="*uid://duibk34ad6yns"
+CharacterDB="*uid://c46xrnlyxdesm"
+StoryDB="*uid://ck40i4har10oe"
+SceneManager="*uid://d1ulqh1j5qg2"
+CharacterEnum="*uid://dmjpda4f80e7n"
+SceneEnum="*uid://bl7l212idxee6"
+StoryEnum="*uid://crpym8kgf2od"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot-neovim/plugin.cfg", "res://addons/godot_ai/plugin.cfg")
 
 [physics]
 
@@ -27,4 +34,5 @@ Constants="*uid://duibk34ad6yns"
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"

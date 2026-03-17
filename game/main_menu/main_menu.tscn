@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://qc2yi6n1djk7"]
 
+[ext_resource type="Script" uid="uid://uys3locutiao" path="res://game/main_menu/choices.gd" id="1_f1bok"]
+
 [sub_resource type="CanvasTexture" id="CanvasTexture_owjf0"]
 
 [node name="MainMenu" type="Control" unique_id=1758158153]
@@ -20,7 +22,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("CanvasTexture_owjf0")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2092805899]
+[node name="Choices" type="VBoxContainer" parent="." unique_id=2092805899]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.079
@@ -31,19 +33,25 @@ offset_left = -0.008003235
 offset_top = -0.2400055
 offset_right = -0.104003906
 offset_bottom = 0.08795166
+script = ExtResource("1_f1bok")
+startup_story_enum = 10
 
-[node name="Label" type="Label" parent="VBoxContainer" unique_id=1303093663]
+[node name="Label" type="Label" parent="Choices" unique_id=1303093663]
 layout_mode = 2
 text = "GAME TITLE"
 
-[node name="Start" type="Button" parent="VBoxContainer" unique_id=456203367]
+[node name="Start" type="Button" parent="Choices" unique_id=456203367]
 layout_mode = 2
 text = "START!"
 
-[node name="Load_Save" type="Button" parent="VBoxContainer" unique_id=590627313]
+[node name="Load_Save" type="Button" parent="Choices" unique_id=590627313]
 layout_mode = 2
 text = "LOAD/SAVE"
 
-[node name="Exit" type="Button" parent="VBoxContainer" unique_id=627621011]
+[node name="Exit" type="Button" parent="Choices" unique_id=627621011]
 layout_mode = 2
 text = "EXIT"
+
+[connection signal="pressed" from="Choices/Start" to="Choices" method="_on_start_pressed"]
+[connection signal="pressed" from="Choices/Load_Save" to="Choices" method="_on_load_save_pressed"]
+[connection signal="pressed" from="Choices/Exit" to="Choices" method="_on_exit_pressed"]
