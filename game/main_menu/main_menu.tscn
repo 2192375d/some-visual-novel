@@ -49,6 +49,14 @@ text = "START!"
 layout_mode = 2
 text = "LOAD/SAVE"
 
+[node name="Settings2" type="Button" parent="Choices" unique_id=1425157767]
+layout_mode = 2
+text = "PROGRESS"
+
+[node name="Settings" type="Button" parent="Choices" unique_id=1626390470]
+layout_mode = 2
+text = "SETTINGS"
+
 [node name="Exit" type="Button" parent="Choices" unique_id=627621011]
 layout_mode = 2
 text = "EXIT"

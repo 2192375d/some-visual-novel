@@ -1,41 +1,309 @@
-[gd_resource type="Resource" script_class="Story" format=3 uid="uid://c1x06qplhjlai"]
+[gd_resource type="Resource" script_class="Story" format=3 uid="uid://cwql7jbvn27w5"]
 
-[ext_resource type="Script" uid="uid://cj3qrux46v0oa" path="res://stories/story.gd" id="1_026un"]
-[ext_resource type="Script" uid="uid://daei7gkd11adi" path="res://stories/storyline.gd" id="2_hj76j"]
-[ext_resource type="Script" uid="uid://c1f4jfca78fdp" path="res://stories/block/block.gd" id="3_p2cp2"]
-[ext_resource type="Script" uid="uid://dya03bwq83i4q" path="res://stories/block/dialogue_block.gd" id="4_tewpv"]
-[ext_resource type="Script" uid="uid://b8q4fuillai1a" path="res://stories/block/end_block.gd" id="5_e4mvo"]
+[ext_resource type="Script" uid="uid://cj3qrux46v0oa" path="res://stories/story.gd" id="1_story"]
+[ext_resource type="Script" uid="uid://daei7gkd11adi" path="res://stories/storyline.gd" id="2_storyline"]
+[ext_resource type="Script" uid="uid://c1f4jfca78fdp" path="res://stories/block/block.gd" id="3_block"]
+[ext_resource type="Script" uid="uid://dya03bwq83i4q" path="res://stories/block/dialogue_block.gd" id="4_dialogue"]
 
-[sub_resource type="Resource" id="Resource_atb6k"]
-script = ExtResource("4_tewpv")
-content = "Memory is like a liar, it paints the past with gold."
-metadata/_custom_type_script = "uid://dya03bwq83i4q"
+[sub_resource type="Resource" id="DialogueBlock_01"]
+script = ExtResource("4_dialogue")
+content = "(12 Years Ago)"
 
-[sub_resource type="Resource" id="Resource_8o2vy"]
-script = ExtResource("4_tewpv")
-content = "It turns a regular sunset into a blazing fire and a simple smile into a salvation."
-metadata/_custom_type_script = "uid://dya03bwq83i4q"
+[sub_resource type="Resource" id="DialogueBlock_02"]
+script = ExtResource("4_dialogue")
+content = "The relationship slowly solidified. She'd led, you'd followed. She stood; you leaned."
 
-[sub_resource type="Resource" id="Resource_1udhf"]
-script = ExtResource("4_tewpv")
-content = "But, in your memory of her, the colors were real. Only the sound was distorted. You could never quite remember the exact pitch of her voice...only the promises she made."
-metadata/_custom_type_script = "uid://dya03bwq83i4q"
+[sub_resource type="Resource" id="DialogueBlock_03"]
+script = ExtResource("4_dialogue")
+content = "The park was bathed in the heavy, amber light of the late atumn sunset. The willow leaves casted a shadow that strecthed long across the grass, reaching towards the river that cut through the city."
 
-[sub_resource type="Resource" id="Resource_8a2li"]
-script = ExtResource("4_tewpv")
-content = "You remember that silence with her was never empty. It was the only time you felt safe."
-metadata/_custom_type_script = "uid://dya03bwq83i4q"
+[sub_resource type="Resource" id="DialogueBlock_04"]
+script = ExtResource("4_dialogue")
+content = "you sat on bench she usually sat, waiting for her."
 
-[sub_resource type="Resource" id="Resource_4r6uf"]
-script = ExtResource("5_e4mvo")
-metadata/_custom_type_script = "uid://b8q4fuillai1a"
+[sub_resource type="Resource" id="DialogueBlock_05"]
+script = ExtResource("4_dialogue")
+content = "In your hand, you were holding a math test that was wrinkled and damp from the sweating palms."
 
-[sub_resource type="Resource" id="Resource_bcchy"]
-script = ExtResource("2_hj76j")
-blocks = Array[ExtResource("3_p2cp2")]([SubResource("Resource_atb6k"), SubResource("Resource_8o2vy"), SubResource("Resource_1udhf"), SubResource("Resource_8a2li"), SubResource("Resource_4r6uf")])
-metadata/_custom_type_script = "uid://daei7gkd11adi"
+[sub_resource type="Resource" id="DialogueBlock_06"]
+script = ExtResource("4_dialogue")
+content = "The grade was circled in red ink. It loooked less like a number rather more like a wound."
+
+[sub_resource type="Resource" id="DialogueBlock_07"]
+script = ExtResource("4_dialogue")
+speaker_enum = 10
+content = "\"I can’t go home,\" you mumbled to the grass, feeling disappointed upon yourself. \"I promised that I'd get a high mark, I'm so stupid.\""
+
+[sub_resource type="Resource" id="DialogueBlock_08"]
+script = ExtResource("4_dialogue")
+content = "After a minute or so, you heard her familiar footsteps and then saw her. Even at ten, she walked a way that set her apart from the other kids; she didn't skip."
+
+[sub_resource type="Resource" id="DialogueBlock_09"]
+script = ExtResource("4_dialogue")
+speaker_enum = 11
+content = "\"You look sad again 晴.\""
+
+[sub_resource type="Resource" id="DialogueBlock_10"]
+script = ExtResource("4_dialogue")
+content = "It wasn't a question. She stood over you, hands clasped behind her back."
+
+[sub_resource type="Resource" id="DialogueBlock_11"]
+script = ExtResource("4_dialogue")
+speaker_enum = 11
+content = "\"What happened?\""
+
+[sub_resource type="Resource" id="DialogueBlock_12"]
+script = ExtResource("4_dialogue")
+speaker_enum = 10
+content = "\"梦璃...look.\""
+
+[sub_resource type="Resource" id="DialogueBlock_13"]
+script = ExtResource("4_dialogue")
+content = "you held out the paper, your hand were trembling."
+
+[sub_resource type="Resource" id="DialogueBlock_14"]
+script = ExtResource("4_dialogue")
+content = "She took it. Her eyes scanned the page precisely."
+
+[sub_resource type="Resource" id="DialogueBlock_15"]
+script = ExtResource("4_dialogue")
+speaker_enum = 11
+content = "\"Mmh....that is... not the best.\""
+
+[sub_resource type="Resource" id="DialogueBlock_16"]
+script = ExtResource("4_dialogue")
+speaker_enum = 10
+content = "\"I tried! I really tried to memorize the formulas,\" you wailed, a tear started to drop from your eye."
+
+[sub_resource type="Resource" id="DialogueBlock_17"]
+script = ExtResource("4_dialogue")
+speaker_enum = 10
+content = "\"But the numbers just... floated away during the test. I’m useless. I’m always going to be useless.\""
+
+[sub_resource type="Resource" id="DialogueBlock_18"]
+script = ExtResource("4_dialogue")
+content = "You buried your face in your hands, waiting for the lecture."
+
+[sub_resource type="Resource" id="DialogueBlock_19"]
+script = ExtResource("4_dialogue")
+content = "Waiting for her to tell you to try harder, like the teachers did."
+
+[sub_resource type="Resource" id="DialogueBlock_20"]
+script = ExtResource("4_dialogue")
+content = "She reached out an open palm, her slightly curved."
+
+[sub_resource type="Resource" id="DialogueBlock_21"]
+script = ExtResource("4_dialogue")
+speaker_enum = 11
+content = "\"Give it here.\""
+
+[sub_resource type="Resource" id="DialogueBlock_22"]
+script = ExtResource("4_dialogue")
+content = "You looked up, blinking through blurry lashes."
+
+[sub_resource type="Resource" id="DialogueBlock_23"]
+script = ExtResource("4_dialogue")
+speaker_enum = 10
+content = "\"What?\""
+
+[sub_resource type="Resource" id="DialogueBlock_24"]
+script = ExtResource("4_dialogue")
+speaker_enum = 11
+content = "\"The paper.\""
+
+[sub_resource type="Resource" id="DialogueBlock_25"]
+script = ExtResource("4_dialogue")
+content = "She placed the crumpled test on the bench between us."
+
+[sub_resource type="Resource" id="DialogueBlock_26"]
+script = ExtResource("4_dialogue")
+content = "With slender, careful fingers, she smoothed out the wrinkles. She pressed down on the creases, flattening the grade until it was just a line of ink."
+
+[sub_resource type="Resource" id="DialogueBlock_27"]
+script = ExtResource("4_dialogue")
+content = "Then, she began to fold. Corner to center. Edge to edge. Her movements were deliberate, like a ritual."
+
+[sub_resource type="Resource" id="DialogueBlock_28"]
+script = ExtResource("4_dialogue")
+speaker_enum = 11
+content = "\"You know, crying makes the ink run,\" she said softly."
+
+[sub_resource type="Resource" id="DialogueBlock_29"]
+script = ExtResource("4_dialogue")
+speaker_enum = 11
+content = "\"If you cry on it, you can’t even learn from your mistakes. You just wash them away.\""
+
+[sub_resource type="Resource" id="DialogueBlock_30"]
+script = ExtResource("4_dialogue")
+speaker_enum = 10
+content = "\"What are you doing?\""
+
+[sub_resource type="Resource" id="DialogueBlock_31"]
+script = ExtResource("4_dialogue")
+speaker_enum = 11
+content = "\"Changing the shape,\" she replied."
+
+[sub_resource type="Resource" id="DialogueBlock_32"]
+script = ExtResource("4_dialogue")
+content = "She made the final crease, running her thumbnail along the spine of the paper."
+
+[sub_resource type="Resource" id="DialogueBlock_33"]
+script = ExtResource("4_dialogue")
+speaker_enum = 11
+content = "\"If it stays a test, then all you’ll see is failure. But if it’s this…\""
+
+[sub_resource type="Resource" id="DialogueBlock_34"]
+script = ExtResource("4_dialogue")
+content = "She held it up. It was a paper airplane, sharp-nosed and streamlined."
+
+[sub_resource type="Resource" id="DialogueBlock_35"]
+script = ExtResource("4_dialogue")
+speaker_enum = 11
+content = "\"...then it’s just something waiting to fly.\""
+
+[sub_resource type="Resource" id="DialogueBlock_36"]
+script = ExtResource("4_dialogue")
+content = "She stood up and walked to the edge of the riverbank."
+
+[sub_resource type="Resource" id="DialogueBlock_37"]
+script = ExtResource("4_dialogue")
+speaker_enum = 11
+content = "\"Stop feeling sad, 晴. Sadness don't fix things. Flying does.\""
+
+[sub_resource type="Resource" id="DialogueBlock_38"]
+script = ExtResource("4_dialogue")
+content = "She pulled her arm back and threw. The plane caught the wind. For a moment, flew high up in the sky."
+
+[sub_resource type="Resource" id="DialogueBlock_39"]
+script = ExtResource("4_dialogue")
+content = "It soared upward, reaching to the burning orange sky, and turning your failure into something graceful. You stopped breathing, mesmerized."
+
+[sub_resource type="Resource" id="DialogueBlock_40"]
+script = ExtResource("4_dialogue")
+content = "Eventually, the wind died and the plane dipped sharply; nose-diving into the river."
+
+[sub_resource type="Resource" id="DialogueBlock_41"]
+script = ExtResource("4_dialogue")
+content = "Plop!"
+
+[sub_resource type="Resource" id="DialogueBlock_42"]
+script = ExtResource("4_dialogue")
+content = "The current caught it immediately. The paper darkened as it soaked up the water, dragging it downstream into the shadows."
+
+[sub_resource type="Resource" id="DialogueBlock_43"]
+script = ExtResource("4_dialogue")
+speaker_enum = 10
+content = "\"Ah! It fell in the water!\" You jumped up so fast the bench scraped the back of your knee, you were panicking."
+
+[sub_resource type="Resource" id="DialogueBlock_44"]
+script = ExtResource("4_dialogue")
+speaker_enum = 10
+content = "\"It’s going to sink! We have to get it back!\""
+
+[sub_resource type="Resource" id="DialogueBlock_45"]
+script = ExtResource("4_dialogue")
+content = "You reached out toward the water."
+
+[sub_resource type="Resource" id="DialogueBlock_46"]
+script = ExtResource("4_dialogue")
+content = "A hand grabbed my shoulder. It was firm and unyielding."
+
+[sub_resource type="Resource" id="DialogueBlock_47"]
+script = ExtResource("4_dialogue")
+speaker_enum = 11
+content = "\"Let it go.\""
+
+[sub_resource type="Resource" id="DialogueBlock_48"]
+script = ExtResource("4_dialogue")
+speaker_enum = 11
+content = "\"But look. The water is taking it. That means the 88 points are gone. The bad feeling is gone. It’s floating away to the ocean.\""
+
+[sub_resource type="Resource" id="DialogueBlock_49"]
+script = ExtResource("4_dialogue")
+content = "You watched the white paper disappear into the murky depths. Your sniffing stopped."
+
+[sub_resource type="Resource" id="DialogueBlock_50"]
+script = ExtResource("4_dialogue")
+speaker_enum = 10
+content = "\"Really?\""
+
+[sub_resource type="Resource" id="DialogueBlock_51"]
+script = ExtResource("4_dialogue")
+speaker_enum = 11
+content = "\"Really. I sent it away for you.\""
+
+[sub_resource type="Resource" id="DialogueBlock_52"]
+script = ExtResource("4_dialogue")
+content = "She turned to face me. The sternness in her eyes melted, replaced by a rare, quiet warmth that she only ever showed you."
+
+[sub_resource type="Resource" id="DialogueBlock_53"]
+script = ExtResource("4_dialogue")
+speaker_enum = 11
+content = "\"You worry too much,\" she said."
+
+[sub_resource type="Resource" id="DialogueBlock_54"]
+script = ExtResource("4_dialogue")
+speaker_enum = 11
+content = "\"You always look at the ground.\""
+
+[sub_resource type="Resource" id="DialogueBlock_55"]
+script = ExtResource("4_dialogue")
+speaker_enum = 10
+content = "\"Because I’m afraid of tripping.\""
+
+[sub_resource type="Resource" id="DialogueBlock_56"]
+script = ExtResource("4_dialogue")
+speaker_enum = 11
+content = "\"If you trip, I’ll catch you. But you have to look up.\""
+
+[sub_resource type="Resource" id="DialogueBlock_57"]
+script = ExtResource("4_dialogue")
+content = "She pointed toward the distant hills, where a gazebo stood at the very peak of the park."
+
+[sub_resource type="Resource" id="DialogueBlock_58"]
+script = ExtResource("4_dialogue")
+speaker_enum = 11
+content = "\"I'm going to go there one day. Not the hill. The highest place in the world. Whatever that is. I’m going to stand on top of everything so nothing can fall on me.\""
+
+[sub_resource type="Resource" id="DialogueBlock_59"]
+script = ExtResource("4_dialogue")
+content = "You shivered."
+
+[sub_resource type="Resource" id="DialogueBlock_60"]
+script = ExtResource("4_dialogue")
+speaker_enum = 10
+content = "\"That sounds... lonely. If you go that high, I won't be able to reach you.\""
+
+[sub_resource type="Resource" id="DialogueBlock_61"]
+script = ExtResource("4_dialogue")
+content = "She paused. She looked at you, really looked at you. Trying to see the terror of abandonment in your eyes."
+
+[sub_resource type="Resource" id="DialogueBlock_62"]
+script = ExtResource("4_dialogue")
+content = "Then, she reached out and took your hand. Her palm was warm, and it somehow steadied your racing heart."
+
+[sub_resource type="Resource" id="DialogueBlock_63"]
+script = ExtResource("4_dialogue")
+speaker_enum = 11
+content = "\"Then I’ll just hold on tighter,\" she said."
+
+[sub_resource type="Resource" id="DialogueBlock_64"]
+script = ExtResource("4_dialogue")
+speaker_enum = 11
+content = "\"If you ever get lost, 晴, just look for the highest place. That’s where I’ll be. And I promise... I won't leave you behind. I never will.\""
+
+[sub_resource type="Resource" id="DialogueBlock_65"]
+script = ExtResource("4_dialogue")
+content = "Her hand was so warm."
+
+[sub_resource type="Resource" id="DialogueBlock_66"]
+script = ExtResource("4_dialogue")
+content = "You didn't know by then that 'high places' are cold, and that to climb that high... she would eventually need both hands free."
+
+[sub_resource type="Resource" id="StoryLine_01"]
+script = ExtResource("2_storyline")
+blocks = Array[ExtResource("3_block")]([SubResource("DialogueBlock_01"), SubResource("DialogueBlock_02"), SubResource("DialogueBlock_03"), SubResource("DialogueBlock_04"), SubResource("DialogueBlock_05"), SubResource("DialogueBlock_06"), SubResource("DialogueBlock_07"), SubResource("DialogueBlock_08"), SubResource("DialogueBlock_09"), SubResource("DialogueBlock_10"), SubResource("DialogueBlock_11"), SubResource("DialogueBlock_12"), SubResource("DialogueBlock_13"), SubResource("DialogueBlock_14"), SubResource("DialogueBlock_15"), SubResource("DialogueBlock_16"), SubResource("DialogueBlock_17"), SubResource("DialogueBlock_18"), SubResource("DialogueBlock_19"), SubResource("DialogueBlock_20"), SubResource("DialogueBlock_21"), SubResource("DialogueBlock_22"), SubResource("DialogueBlock_23"), SubResource("DialogueBlock_24"), SubResource("DialogueBlock_25"), SubResource("DialogueBlock_26"), SubResource("DialogueBlock_27"), SubResource("DialogueBlock_28"), SubResource("DialogueBlock_29"), SubResource("DialogueBlock_30"), SubResource("DialogueBlock_31"), SubResource("DialogueBlock_32"), SubResource("DialogueBlock_33"), SubResource("DialogueBlock_34"), SubResource("DialogueBlock_35"), SubResource("DialogueBlock_36"), SubResource("DialogueBlock_37"), SubResource("DialogueBlock_38"), SubResource("DialogueBlock_39"), SubResource("DialogueBlock_40"), SubResource("DialogueBlock_41"), SubResource("DialogueBlock_42"), SubResource("DialogueBlock_43"), SubResource("DialogueBlock_44"), SubResource("DialogueBlock_45"), SubResource("DialogueBlock_46"), SubResource("DialogueBlock_47"), SubResource("DialogueBlock_48"), SubResource("DialogueBlock_49"), SubResource("DialogueBlock_50"), SubResource("DialogueBlock_51"), SubResource("DialogueBlock_52"), SubResource("DialogueBlock_53"), SubResource("DialogueBlock_54"), SubResource("DialogueBlock_55"), SubResource("DialogueBlock_56"), SubResource("DialogueBlock_57"), SubResource("DialogueBlock_58"), SubResource("DialogueBlock_59"), SubResource("DialogueBlock_60"), SubResource("DialogueBlock_61"), SubResource("DialogueBlock_62"), SubResource("DialogueBlock_63"), SubResource("DialogueBlock_64"), SubResource("DialogueBlock_65"), SubResource("DialogueBlock_66")])
 
 [resource]
-script = ExtResource("1_026un")
-story_line = Array[ExtResource("2_hj76j")]([SubResource("Resource_bcchy")])
-metadata/_custom_type_script = "uid://cj3qrux46v0oa"
+script = ExtResource("1_story")
+story_line = Array[ExtResource("2_storyline")]([SubResource("StoryLine_01")])

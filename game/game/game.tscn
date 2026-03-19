@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cyw3agwr5v4o3" path="res://game/game/game.gd" id="1_5t5jc"]
 [ext_resource type="Script" uid="uid://dbodlo3ye2xyj" path="res://game/game/game_components/dialogue_box.gd" id="2_41k3g"]
 [ext_resource type="Script" uid="uid://bq2fnpig4buuw" path="res://game/game/game_components/choice_box.gd" id="3_7dndb"]
+[ext_resource type="AudioStream" uid="uid://dx17j6cx5qus" path="res://assets/pickupCoin.wav" id="3_mafgb"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_wwx06"]
 
@@ -30,13 +31,28 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("CanvasTexture_wwx06")
 
-[node name="DialogueBox" type="MarginContainer" parent="." unique_id=1285492361 node_paths=PackedStringArray("speaker_label", "content_label")]
+[node name="DialogueBoxBackground" type="TextureRect" parent="." unique_id=518425800]
+modulate = Color(0.49411765, 1, 1, 0.4117647)
+custom_minimum_size = Vector2(0, 224)
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -207.0
+offset_top = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = SubResource("CanvasTexture_7dndb")
+
+[node name="DialogueBox" type="MarginContainer" parent="." unique_id=1285492361 node_paths=PackedStringArray("speaker_label", "content_label", "text_display_timer", "audio_stream_player")]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 64.0
+offset_top = -223.0
+offset_right = -64.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/margin_left = 16
@@ -46,22 +62,28 @@ theme_override_constants/margin_bottom = 16
 script = ExtResource("2_41k3g")
 speaker_label = NodePath("VBoxContainer/Speaker")
 content_label = NodePath("VBoxContainer/Dialogue/Content")
+text_display_timer = NodePath("VBoxContainer/Timer")
+audio_stream_player = NodePath("AudioStreamPlayer")
 metadata/_custom_type_script = "uid://dbodlo3ye2xyj"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="DialogueBox" unique_id=2031320899]
 layout_mode = 2
+theme_override_constants/separation = 16
 
 [node name="Speaker" type="Label" parent="DialogueBox/VBoxContainer" unique_id=282850077]
 layout_mode = 2
-text = "character"
+theme_override_font_sizes/font_size = 28
+text = "CHARACTER"
 horizontal_alignment = 1
 
 [node name="Dialogue" type="HBoxContainer" parent="DialogueBox/VBoxContainer" unique_id=597847136]
 layout_mode = 2
 
 [node name="Content" type="Label" parent="DialogueBox/VBoxContainer/Dialogue" unique_id=848084838]
-custom_minimum_size = Vector2(0, 128)
+custom_minimum_size = Vector2(0, 96)
 layout_mode = 2
+size_flags_horizontal = 3
+autowrap_mode = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="DialogueBox/VBoxContainer/Dialogue" unique_id=675721989]
 layout_mode = 2
@@ -72,12 +94,15 @@ layout_mode = 2
 [node name="Button" type="Button" parent="DialogueBox/VBoxContainer/Buttons" unique_id=2120936257]
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
-text = "button"
+text = "load"
 
-[node name="TextureRect" type="TextureRect" parent="DialogueBox" unique_id=518425800]
-modulate = Color(0.49411765, 1, 1, 0.4117647)
-layout_mode = 2
-texture = SubResource("CanvasTexture_7dndb")
+[node name="Timer" type="Timer" parent="DialogueBox/VBoxContainer" unique_id=1715929451]
+wait_time = 0.005
+one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="DialogueBox" unique_id=1993440992]
+stream = ExtResource("3_mafgb")
+volume_db = -20.0
 
 [node name="ChoiceBox" type="VBoxContainer" parent="." unique_id=1481324992 node_paths=PackedStringArray("buttons")]
 layout_mode = 1
@@ -115,3 +140,5 @@ layout_mode = 2
 text = "choice 4"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1713816544]
+
+[connection signal="timeout" from="DialogueBox/VBoxContainer/Timer" to="DialogueBox" method="_on_timer_timeout"]

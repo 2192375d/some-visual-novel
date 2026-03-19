@@ -15,12 +15,15 @@ For example:
 
 ## todo
 - [ ] allow loading while playing some kinda animation
-- [ ] add more stories
+- [ ] add more stories (current at story_0_1)
 - [ ] save load system (should be independent from the game entirely)
-- [ ] add text rollout
+- [x] add text roll out
 
 expected savefile content:
 - time saved
 - completed story enums
 - current story enum
 
+
+## problems in the future
+- DialogueBlock does not keep track of character emotion, only an image for the character

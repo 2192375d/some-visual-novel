@@ -1,0 +1,42 @@
+[gd_resource type="Resource" script_class="Story" format=3 uid="uid://c1x06qplhjlai"]
+
+[ext_resource type="Script" uid="uid://cj3qrux46v0oa" path="res://stories/story.gd" id="1_026un"]
+[ext_resource type="Script" uid="uid://daei7gkd11adi" path="res://stories/storyline.gd" id="2_hj76j"]
+[ext_resource type="Script" uid="uid://c1f4jfca78fdp" path="res://stories/block/block.gd" id="3_p2cp2"]
+[ext_resource type="Script" uid="uid://dya03bwq83i4q" path="res://stories/block/dialogue_block.gd" id="4_tewpv"]
+[ext_resource type="Script" uid="uid://b8q4fuillai1a" path="res://stories/block/end_block.gd" id="5_e4mvo"]
+
+[sub_resource type="Resource" id="Resource_atb6k"]
+script = ExtResource("4_tewpv")
+content = "Memory is like a liar, it paints the past with gold."
+metadata/_custom_type_script = "uid://dya03bwq83i4q"
+
+[sub_resource type="Resource" id="Resource_8o2vy"]
+script = ExtResource("4_tewpv")
+content = "It turns a regular sunset into a blazing fire and a simple smile into a salvation."
+metadata/_custom_type_script = "uid://dya03bwq83i4q"
+
+[sub_resource type="Resource" id="Resource_1udhf"]
+script = ExtResource("4_tewpv")
+content = "But, in your memory of her, the colors were real. Only the sound was distorted. You could never quite remember the exact pitch of her voice...only the promises she made."
+metadata/_custom_type_script = "uid://dya03bwq83i4q"
+
+[sub_resource type="Resource" id="Resource_8a2li"]
+script = ExtResource("4_tewpv")
+content = "You remember that silence with her was never empty. It was the only time you felt safe."
+metadata/_custom_type_script = "uid://dya03bwq83i4q"
+
+[sub_resource type="Resource" id="Resource_4r6uf"]
+script = ExtResource("5_e4mvo")
+metadata/_custom_type_script = "uid://b8q4fuillai1a"
+
+[sub_resource type="Resource" id="Resource_bcchy"]
+script = ExtResource("2_hj76j")
+blocks = Array[ExtResource("3_p2cp2")]([SubResource("Resource_atb6k"), SubResource("Resource_8o2vy"), SubResource("Resource_1udhf"), SubResource("Resource_8a2li"), SubResource("Resource_4r6uf")])
+metadata/_custom_type_script = "uid://daei7gkd11adi"
+
+[resource]
+script = ExtResource("1_026un")
+story_line = Array[ExtResource("2_hj76j")]([SubResource("Resource_bcchy")])
+next_stories = Array[int]([12])
+metadata/_custom_type_script = "uid://cj3qrux46v0oa"
