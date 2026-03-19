@@ -1,10 +1,14 @@
 [gd_scene format=3 uid="uid://dc3cao46b0ye0"]
 
 [ext_resource type="Script" uid="uid://cyw3agwr5v4o3" path="res://game/game/game.gd" id="1_5t5jc"]
+[ext_resource type="Script" uid="uid://dbodlo3ye2xyj" path="res://game/game/game_components/dialogue_box.gd" id="2_41k3g"]
+[ext_resource type="Script" uid="uid://bq2fnpig4buuw" path="res://game/game/game_components/choice_box.gd" id="3_7dndb"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_wwx06"]
 
-[node name="Game" type="Control" unique_id=924444583]
+[sub_resource type="CanvasTexture" id="CanvasTexture_7dndb"]
+
+[node name="Game" type="Control" unique_id=1118577396 node_paths=PackedStringArray("dialogue_box", "choice_box")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,6 +16,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5t5jc")
+dialogue_box = NodePath("DialogueBox")
+choice_box = NodePath("ChoiceBox")
+metadata/_custom_type_script = "uid://cyw3agwr5v4o3"
 
 [node name="Background" type="TextureRect" parent="." unique_id=428439433]
 modulate = Color(1, 1, 1, 0.38431373)
@@ -23,7 +30,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("CanvasTexture_wwx06")
 
-[node name="DialogueBox" type="MarginContainer" parent="." unique_id=1001218058]
+[node name="DialogueBox" type="MarginContainer" parent="." unique_id=1285492361 node_paths=PackedStringArray("speaker_label", "content_label")]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -35,7 +42,11 @@ grow_vertical = 0
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
-theme_override_constants/margin_bottom = 0
+theme_override_constants/margin_bottom = 16
+script = ExtResource("2_41k3g")
+speaker_label = NodePath("VBoxContainer/Speaker")
+content_label = NodePath("VBoxContainer/Dialogue/Content")
+metadata/_custom_type_script = "uid://dbodlo3ye2xyj"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="DialogueBox" unique_id=2031320899]
 layout_mode = 2
@@ -62,3 +73,45 @@ layout_mode = 2
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 text = "button"
+
+[node name="TextureRect" type="TextureRect" parent="DialogueBox" unique_id=518425800]
+modulate = Color(0.49411765, 1, 1, 0.4117647)
+layout_mode = 2
+texture = SubResource("CanvasTexture_7dndb")
+
+[node name="ChoiceBox" type="VBoxContainer" parent="." unique_id=1481324992 node_paths=PackedStringArray("buttons")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -164.0
+offset_right = 256.0
+offset_bottom = -39.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+script = ExtResource("3_7dndb")
+buttons = [NodePath("Button1"), NodePath("Button2"), NodePath("Button3")]
+metadata/_custom_type_script = "uid://bq2fnpig4buuw"
+
+[node name="Button1" type="Button" parent="ChoiceBox" unique_id=934305235]
+custom_minimum_size = Vector2(512, 0)
+layout_mode = 2
+text = "choice 1"
+
+[node name="Button2" type="Button" parent="ChoiceBox" unique_id=557101722]
+layout_mode = 2
+text = "choice 2"
+
+[node name="Button3" type="Button" parent="ChoiceBox" unique_id=862112274]
+layout_mode = 2
+text = "choice 3"
+
+[node name="Button4" type="Button" parent="ChoiceBox" unique_id=887495433]
+layout_mode = 2
+text = "choice 4"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1713816544]

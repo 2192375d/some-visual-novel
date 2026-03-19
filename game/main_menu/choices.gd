@@ -1,6 +1,8 @@
 extends VBoxContainer
 
-@export var startup_story_enum: StoryEnum.Enum
+class_name MainMenuChoices
+
+@export var startup_story_enum: StoryEnum.Enum = StoryEnum.Enum.NONE
 
 # responsible for handling the action after a specific button is pressed
 

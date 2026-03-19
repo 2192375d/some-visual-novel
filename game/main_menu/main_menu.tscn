@@ -22,7 +22,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("CanvasTexture_owjf0")
 
-[node name="Choices" type="VBoxContainer" parent="." unique_id=2092805899]
+[node name="Choices" type="VBoxContainer" parent="." unique_id=1964142861]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.079
@@ -35,6 +35,7 @@ offset_right = -0.104003906
 offset_bottom = 0.08795166
 script = ExtResource("1_f1bok")
 startup_story_enum = 10
+metadata/_custom_type_script = "uid://uys3locutiao"
 
 [node name="Label" type="Label" parent="Choices" unique_id=1303093663]
 layout_mode = 2

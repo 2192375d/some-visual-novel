@@ -15,6 +15,6 @@ func _ready() -> void:
 	assert(story_enum in StoryEnum.Enum.values() && story_enum != StoryEnum.Enum.NONE)
 	
 	var story: Story = load(StoryDB.get_story_id(story_enum))
-	var runtimeDB: RuntimeDB = RuntimeDB.new(story)
-	SceneManager.switch_scene(SceneEnum.Enum.GAME, [runtimeDB])
+	var game_state: GameState = GameState.new(story)
+	SceneManager.switch_scene(SceneEnum.Enum.GAME, [game_state])
 	

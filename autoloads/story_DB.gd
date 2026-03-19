@@ -4,7 +4,9 @@
 extends Node
 
 var story_id_dictionary: Dictionary[StoryEnum.Enum, StringName] = {
-	#STORY_0_0: &""
+	StoryEnum.Enum.STORY_0_0: &"uid://c8foe8rikwabc",
+	StoryEnum.Enum.STORY_0_1: &"uid://c1x06qplhjlai",
+	StoryEnum.Enum.STORY_0_2: &"uid://rkuf5ext45pr",
 }
 
 func get_story_id(story_enum: StoryEnum.Enum) -> StringName:

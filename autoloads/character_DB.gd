@@ -6,7 +6,7 @@ extends Node
 var character_dictionary: Dictionary[CharacterEnum.Enum, Character] = {
 	CharacterEnum.Enum.NARRATOR: load("uid://muea2gswvdum"),
 	CharacterEnum.Enum.MC: load("uid://dkpwcwangex0"),
-	CharacterEnum.Enum.PROTAGONIST2: load("uid://dubejq3bgvuol")
+	CharacterEnum.Enum.PROTAGONIST2: load("uid://dubejq3bgvuol"),
 }
 
 func get_character(character_enum: CharacterEnum.Enum) -> Character:

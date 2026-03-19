@@ -1,5 +1,6 @@
-# responsible for changing the current scene to the target scene based on input
-# SceneEnum, and arguments passed in the args array
+# Responsible for changing the current scene to the target scene based on input
+# SceneEnum, and arguments passed in the args array.
+# Also responsible for storing all the scenes
 # The scenes are loaded on boot
 
 extends Node
