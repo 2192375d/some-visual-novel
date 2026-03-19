@@ -94,7 +94,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 16
 script = ExtResource("3_7dndb")
-buttons = [NodePath("Button1"), NodePath("Button2"), NodePath("Button3")]
+buttons = [NodePath("Button1"), NodePath("Button2"), NodePath("Button3"), NodePath("Button4")]
 metadata/_custom_type_script = "uid://bq2fnpig4buuw"
 
 [node name="Button1" type="Button" parent="ChoiceBox" unique_id=934305235]

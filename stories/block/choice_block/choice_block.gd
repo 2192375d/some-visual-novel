@@ -15,5 +15,8 @@ func execute(game: Game) -> void:
 	var choice_index: int = await choice_box.choice_click
 	var target_choice: Choice = choices[choice_index]
 	
-	game.get_game_state().set_story_index(target_choice.get_target_index1(),
+	var game_state: GameState = game.get_game_state()
+	game_state.set_story_index(target_choice.get_target_index1(),
 										  target_choice.get_target_index2())
+	
+	block_complete.emit()
