@@ -91,10 +91,15 @@ layout_mode = 2
 [node name="Buttons" type="HBoxContainer" parent="DialogueBox/VBoxContainer" unique_id=1938405714]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="DialogueBox/VBoxContainer/Buttons" unique_id=2120936257]
+[node name="load" type="Button" parent="DialogueBox/VBoxContainer/Buttons" unique_id=2120936257]
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 text = "load"
+
+[node name="history" type="Button" parent="DialogueBox/VBoxContainer/Buttons" unique_id=297608235]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+text = "history"
 
 [node name="Timer" type="Timer" parent="DialogueBox/VBoxContainer" unique_id=1715929451]
 wait_time = 0.005

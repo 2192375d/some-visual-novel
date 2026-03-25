@@ -53,5 +53,5 @@ func display_current_content() -> void:
 	if !audio_stream_player.playing && content_index % 2 == 0 && content[content_index] != " ":
 		audio_stream_player.pitch_scale = randf_range(0.96, 1.04)
 		audio_stream_player.volume_db = randf_range(-22.0, -18.0)
-		audio_stream_player.volume_db -= content_index / 10
+		audio_stream_player.volume_db -= content_index / 10.0
 		audio_stream_player.play()
