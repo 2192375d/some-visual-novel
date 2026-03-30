@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cyw3agwr5v4o3" path="res://game/game/game.gd" id="1_5t5jc"]
 [ext_resource type="Script" uid="uid://dbodlo3ye2xyj" path="res://game/game/game_components/dialogue_box.gd" id="2_41k3g"]
 [ext_resource type="Script" uid="uid://bq2fnpig4buuw" path="res://game/game/game_components/choice_box.gd" id="3_7dndb"]
-[ext_resource type="AudioStream" uid="uid://dx17j6cx5qus" path="res://assets/pickupCoin.wav" id="3_mafgb"]
+[ext_resource type="AudioStream" uid="uid://dx17j6cx5qus" path="res://assets/text_playing.wav" id="3_mafgb"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_wwx06"]
 
@@ -143,7 +143,5 @@ text = "choice 3"
 [node name="Button4" type="Button" parent="ChoiceBox" unique_id=887495433]
 layout_mode = 2
 text = "choice 4"
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1713816544]
 
 [connection signal="timeout" from="DialogueBox/VBoxContainer/Timer" to="DialogueBox" method="_on_timer_timeout"]

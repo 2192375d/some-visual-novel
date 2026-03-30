@@ -20,10 +20,11 @@ signal box_click
 func _ready() -> void:
 	pass
 
-
+# display the speaker
 func set_dialogue_speaker(speaker_name: String) -> void:
 	speaker_label.text = speaker_name
 
+# display the dialogue, with text appearing procedurally
 func set_dialogue_content(new_content: String) -> void:
 	content = new_content
 	content_index = 0

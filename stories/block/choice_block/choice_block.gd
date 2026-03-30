@@ -2,6 +2,10 @@ extends Block
 
 @export var choices: Array[Choice]
 
+# M: tell choice_box to modify and display the choices on the choice box, and show it itself
+# W: wait for any choice is clicked
+# M: set game state's indices to the target from selected choice
+# E: default
 func execute(game: Game) -> void:
 	var choice_box: ChoiceBox = game.get_choice_box()
 	

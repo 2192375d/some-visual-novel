@@ -1,10 +1,10 @@
+# responsible for handling the action after a specific button is pressed
+
 extends VBoxContainer
 
 class_name MainMenuChoices
 
 @export var startup_story_enum: StoryEnum.Enum = StoryEnum.Enum.NONE
-
-# responsible for handling the action after a specific button is pressed
 
 func _on_start_pressed() -> void:
 	SceneManager.switch_scene(SceneEnum.Enum.LOADING_SCREEN, [startup_story_enum])

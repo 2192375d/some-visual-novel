@@ -17,4 +17,12 @@ func _ready() -> void:
 	var story: Story = load(StoryDB.get_story_id(story_enum))
 	var game_state: GameState = GameState.new(story)
 	SceneManager.switch_scene(SceneEnum.Enum.GAME, [game_state])
-	
+
+#@export var progress_bar: ProgressBar
+#@onready var scene_enum: SceneEnum.Enum = SceneEnum.Enum.NONE
+#
+#func _ready() -> void:
+	#set_process(false)
+#
+#func load_game(story_enum: StoryEnum.Enum) -> void:
+	#pass

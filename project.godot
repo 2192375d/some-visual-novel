@@ -26,7 +26,7 @@ StoryEnum="*uid://crpym8kgf2od"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/godot_ai/plugin.cfg")
+enabled=PackedStringArray()
 
 [gui]
 

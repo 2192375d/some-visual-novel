@@ -9,13 +9,12 @@ class_name ChoiceBox
 signal choice_click(choice_index: int)
 
 func _ready() -> void:
+	hide()
 	for i in range(buttons.size()):
-		buttons[i].hide()
 		buttons[i].pressed.connect(
 		func(): 
 			choice_click.emit(i)
-			for j in range(buttons.size()):
-				buttons[j].hide()
+			hide()
 		)
 
 func display_choice_box(choice_messages: Array[String]) -> void:

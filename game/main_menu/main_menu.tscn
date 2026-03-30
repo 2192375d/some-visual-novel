@@ -49,7 +49,7 @@ text = "START!"
 layout_mode = 2
 text = "LOAD/SAVE"
 
-[node name="Settings2" type="Button" parent="Choices" unique_id=1425157767]
+[node name="Progress" type="Button" parent="Choices" unique_id=1425157767]
 layout_mode = 2
 text = "PROGRESS"
 

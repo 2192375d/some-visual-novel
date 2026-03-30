@@ -120,13 +120,13 @@ metadata/_custom_type_script = "uid://dya03bwq83i4q"
 script = ExtResource("5_si8l5")
 metadata/_custom_type_script = "uid://b8q4fuillai1a"
 
-[sub_resource type="Resource" id="Resource_7n0c7"]
+[sub_resource type="Resource" id="Resource_05und"]
 script = ExtResource("2_si8l5")
 blocks = Array[ExtResource("3_k6jck")]([SubResource("Resource_y2taw"), SubResource("Resource_nb6us"), SubResource("Resource_ficb2"), SubResource("Resource_fl4fk"), SubResource("Resource_cbbax"), SubResource("Resource_omtcu"), SubResource("Resource_3aiqg"), SubResource("Resource_qe23d"), SubResource("Resource_1j0jp"), SubResource("Resource_rpmc2"), SubResource("Resource_csef2"), SubResource("Resource_aj036"), SubResource("Resource_t6727"), SubResource("Resource_hfw6a"), SubResource("Resource_djrsn"), SubResource("Resource_4axft"), SubResource("Resource_eb1or"), SubResource("Resource_nx7v5"), SubResource("Resource_7f0eb"), SubResource("Resource_xlfgp"), SubResource("Resource_bnkcn"), SubResource("Resource_k6jck")])
 metadata/_custom_type_script = "uid://daei7gkd11adi"
 
 [resource]
 script = ExtResource("1_qqy8f")
-story_line = Array[ExtResource("2_si8l5")]([SubResource("Resource_7n0c7")])
+story_line = Array[ExtResource("2_si8l5")]([SubResource("Resource_05und")])
 next_stories = Array[int]([13])
 metadata/_custom_type_script = "uid://cj3qrux46v0oa"
