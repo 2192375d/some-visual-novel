@@ -17,6 +17,8 @@ var game_loading_screen_scene: PackedScene = load(scene_dictionary.get(SceneEnum
 func switch_scene_to_game(story_enum: StoryEnum.Enum) -> void:
 	assert(story_enum in StoryEnum.Enum.values())
 	
+	print("switching to game scene with enum: ", StoryEnum.Enum.find_key(story_enum))
+	
 	var game_loading_screen: GameLoadingScreen = game_loading_screen_scene.instantiate()
 	get_tree().change_scene_to_node(game_loading_screen)
 	game_loading_screen.start_loading(story_enum)

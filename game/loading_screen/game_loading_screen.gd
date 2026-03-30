@@ -16,6 +16,7 @@ const STORY_PROPORTION: float = 0.05
 const STORY_ASSETS_PROPORTION: float = 0.80
 const INITATE_STORY_STATE_PROPORTION: float = 0.02
 const GAME_SCENE_INSTANTIATION_PROPORTION: float = 0.13
+const ASSET_BLOCKS_PER_FRAME: int = 32
 
 signal loading_complete(game: Node)
 
@@ -92,19 +93,26 @@ func _process(_delta: float) -> void:
 				loading_stage = LoadingStage.STORY_STATE
 				return
 			
-			var block: Block = story.get_block(current_index1, current_index2)
-			block.add_needed_resource(story_asset)
-			current_block += 1
+			var processed_block: int = 0
+			while processed_block < ASSET_BLOCKS_PER_FRAME && current_index1 < story.get_num_story_line():
+				var block: Block = story.get_block(current_index1, current_index2)
+				block.add_needed_resource(story_asset)
+				current_block += 1
+				processed_block += 1
+				
+				current_index2 += 1
+				if current_index2 >= story.get_story_line_size(current_index1):
+					current_index1 += 1
+					current_index2 = 0
 			
 			if num_block > 0:
 				progress_bar.value = STORY_PROPORTION + STORY_ASSETS_PROPORTION * float(current_block) / num_block
 			else:
 				progress_bar.value = STORY_PROPORTION + STORY_ASSETS_PROPORTION
 			
-			current_index2 += 1
-			if current_index2 >= story.get_story_line_size(current_index1):
-				current_index1 += 1
-				current_index2 = 0
+			if current_index1 >= story.get_num_story_line():
+				progress_bar.value = STORY_PROPORTION + STORY_ASSETS_PROPORTION
+				loading_stage = LoadingStage.STORY_STATE
 		LoadingStage.STORY_STATE:
 			story_state = StoryState.new()
 			game_state = GameState.new(story, story_state, story_asset)

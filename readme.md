@@ -5,8 +5,14 @@ codex resume 019d06f1-4333-7350-ad01-51a57c2d6236
 font: https://kmlgames.itch.io/friendly-scribbles/download/eyJpZCI6OTE3MzI3LCJleHBpcmVzIjoxNzY3NjgyNzM4fQ%3d%3d.LCGw0VV9RTgMK1HGKLWMXyQZ8lU%3d
 
 ## todo
-in summary: modify game's input, bundle boxes in game to View, modify game's execute input to view and history and storystate
+- [ ] SL system (should be independent from the game entirely)
+- [ ] add progress system
+- [ ] allow loading while playing some kinda animation
+- [ ] make a tooling script for adding new story
+- [ ] optimize loading speed
 
+### completed:
+- [x] add text roll out
 - [x] Recreate `Game`'s inputs:
 	- `Story`
 	- `StoryAsset` (Illlustrations + Soundtracks)
@@ -17,13 +23,7 @@ in summary: modify game's input, bundle boxes in game to View, modify game's exe
 	- Block's execute function instead takes `View`, `History`, `StoryState` as input, where it updates view, add string in history, and modify story state after view signals back.
 	- add History button (and the other buttons, once they are ready)
 - [x] Modify the `SceneManager`; Recreate resource loading for each scene (only load images for the specific character/background on spot when loading the chapter), done through removing global asset state
-- [ ] SL system (should be independent from the game entirely)
-- [ ] add progress system
-- [ ] allow loading while playing some kinda animation
-- [ ] make a tooling script for adding new story
 
-### completed:
-- [x] add text roll out
 
 
 expected savefile content:
@@ -36,28 +36,6 @@ expected savefile content:
 - The process of adding story is very tedious, involves multiple steps, consider refactoring the code so that it simply queries through `stories/stories/` directory, and updates the story database based of it
 
 ## coding
-### invariants
-- all the (heavy) loading should store the information in one of the corresponding autoload caches
-
-
-### passing data to a new scene (`with_data()`)
-In this project, I used `with_data()` for every class that needs to be instantiated with some extra argument.
-For example:
-```
-extends Node
-class_name SomeType
-
-var value: int
-func with_data(new_value: int) -> SomeType:
-	value = new_value
-	return self
-```
-To instantiated an instance of `SomeType`, you do
-```
-var some_type_scene: PackedScene = load(...)
-var some_type = some_type_scene.instantiate().with_data(5)
-```
-This is generally used for Scene swapping, through `SceneManager`
 
 ### enums
 The enums used in game are stored as autoloads under `res://autoloads/enums/`
