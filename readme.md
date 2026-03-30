@@ -7,16 +7,16 @@ font: https://kmlgames.itch.io/friendly-scribbles/download/eyJpZCI6OTE3MzI3LCJle
 ## todo
 in summary: modify game's input, bundle boxes in game to View, modify game's execute input to view and history and storystate
 
-- [ ] Make `StoryState` (index1, index2) an autoload -> ongoing
-- [ ] Recreate `Game`'s inputs: -> ongoing
+- [x] Recreate `Game`'s inputs:
 	- `Story`
 	- `StoryAsset` (Illlustrations + Soundtracks)
-- [ ] Modifications on `Game`: -> ongoing
+	- `StoryState` (index1, index2)
+- [x] Modifications on `Game`:
 	- make `DialogueBox`, `ChoiceBox` to be part of the `View` component of the game
 	- add `History` component in the game
 	- Block's execute function instead takes `View`, `History`, `StoryState` as input, where it updates view, add string in history, and modify story state after view signals back.
 	- add History button (and the other buttons, once they are ready)
-- [ ] Modify the `SceneManager`; Recreate resource loading for each scene (only load images for the specific character/background on spot when loading the chapter), done through removing global asset state -> ongoing
+- [x] Modify the `SceneManager`; Recreate resource loading for each scene (only load images for the specific character/background on spot when loading the chapter), done through removing global asset state
 - [ ] SL system (should be independent from the game entirely)
 - [ ] add progress system
 - [ ] allow loading while playing some kinda animation

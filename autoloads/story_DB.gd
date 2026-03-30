@@ -12,6 +12,6 @@ var story_id_dictionary: Dictionary[StoryEnum.Enum, StringName] = {
 	StoryEnum.Enum.STORY_0_3: &"uid://bbuk76g1lmqk6",
 }
 
-func get_story_id(story_enum: StoryEnum.Enum) -> StringName:
+func get_story_uid(story_enum: StoryEnum.Enum) -> StringName:
 	assert(story_enum in StoryEnum.Enum.values())
 	return story_id_dictionary.get(story_enum)

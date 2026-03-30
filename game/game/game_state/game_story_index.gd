@@ -1,3 +1,4 @@
+# to be removed
 extends RefCounted
 
 class_name GameStoryIndex

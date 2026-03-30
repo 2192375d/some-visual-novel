@@ -1,17 +1,14 @@
-# responsible for developing a mapping between CharacterEnum to the target 
-# Character. The characters are loaded on boot
-
 extends Node
 
-var character_dictionary: Dictionary[CharacterEnum.Enum, Character] = {
-	CharacterEnum.Enum.NARRATOR: load("uid://muea2gswvdum"),
-	CharacterEnum.Enum.MC: load("uid://dkpwcwangex0"),
-	CharacterEnum.Enum.PROTAGONIST2: load("uid://dubejq3bgvuol"),
+var character_dictionary: Dictionary[CharacterEnum.Enum, StringName] = {
+	CharacterEnum.Enum.NARRATOR: "uid://muea2gswvdum",
+	CharacterEnum.Enum.MC: "uid://dkpwcwangex0",
+	CharacterEnum.Enum.PROTAGONIST2: "uid://dubejq3bgvuol",
 }
 
-func get_character(character_enum: CharacterEnum.Enum) -> Character:
+func get_character_uid(character_enum: CharacterEnum.Enum) -> StringName:
 	assert(character_enum in CharacterEnum.Enum.values())
 	return character_dictionary.get(character_enum)
 
-func get_characters_all() -> Array[Character]:
+func get_character_uid_all() -> Array[StringName]:
 	return character_dictionary.values()

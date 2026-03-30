@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://f5j35ib7b70b"]
+
+[ext_resource type="Script" uid="uid://dhkg4210doigd" path="res://game/loading_screen/game_loading_screen.gd" id="1_2d5lo"]
+
+[node name="GameLoadingScreen" type="Control" unique_id=1774292101 node_paths=PackedStringArray("progress_bar")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2d5lo")
+progress_bar = NodePath("ProgressBar")
+metadata/_custom_type_script = "uid://dhkg4210doigd"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1805692649]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=682525719]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -21.0
+grow_horizontal = 2
+grow_vertical = 0
+max_value = 1.0
+step = 0.001
+
+[node name="Label" type="Label" parent="." unique_id=1140149297]
+modulate = Color(0, 0.26666668, 1, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -76.5
+offset_top = -8.5
+offset_right = 76.5
+offset_bottom = 8.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "loading game..."

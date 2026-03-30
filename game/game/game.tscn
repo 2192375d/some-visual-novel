@@ -1,15 +1,17 @@
 [gd_scene format=3 uid="uid://dc3cao46b0ye0"]
 
 [ext_resource type="Script" uid="uid://cyw3agwr5v4o3" path="res://game/game/game.gd" id="1_5t5jc"]
-[ext_resource type="Script" uid="uid://dbodlo3ye2xyj" path="res://game/game/game_components/dialogue_box.gd" id="2_41k3g"]
-[ext_resource type="Script" uid="uid://bq2fnpig4buuw" path="res://game/game/game_components/choice_box.gd" id="3_7dndb"]
+[ext_resource type="Script" uid="uid://dbodlo3ye2xyj" path="res://game/game/interactive_component/dialogue_box.gd" id="2_41k3g"]
+[ext_resource type="Script" uid="uid://bwro7s8or2x2l" path="res://game/game/interactive_component/interactive_component.gd" id="2_m7sxm"]
+[ext_resource type="Script" uid="uid://bq2fnpig4buuw" path="res://game/game/interactive_component/choice_box.gd" id="3_7dndb"]
 [ext_resource type="AudioStream" uid="uid://dx17j6cx5qus" path="res://assets/text_playing.wav" id="3_mafgb"]
+[ext_resource type="Script" uid="uid://ljvnqqodt45e" path="res://game/game/game_state/history_box.gd" id="6_efj5v"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_wwx06"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_7dndb"]
 
-[node name="Game" type="Control" unique_id=1118577396 node_paths=PackedStringArray("dialogue_box", "choice_box")]
+[node name="Game" type="Control" unique_id=1118577396 node_paths=PackedStringArray("interactive_component", "history_box")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,8 +19,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5t5jc")
-dialogue_box = NodePath("DialogueBox")
-choice_box = NodePath("ChoiceBox")
+interactive_component = NodePath("InteractiveComponent")
+history_box = NodePath("HistoryBox")
 metadata/_custom_type_script = "uid://cyw3agwr5v4o3"
 
 [node name="Background" type="TextureRect" parent="." unique_id=428439433]
@@ -44,8 +46,47 @@ grow_horizontal = 2
 grow_vertical = 0
 texture = SubResource("CanvasTexture_7dndb")
 
-[node name="DialogueBox" type="MarginContainer" parent="." unique_id=1285492361 node_paths=PackedStringArray("speaker_label", "content_label", "text_display_timer", "audio_stream_player")]
-layout_mode = 1
+[node name="InteractiveComponent" type="Node" parent="." unique_id=434697202 node_paths=PackedStringArray("dialogue_box", "choice_box")]
+script = ExtResource("2_m7sxm")
+dialogue_box = NodePath("DialogueBox")
+choice_box = NodePath("ChoiceBox")
+metadata/_custom_type_script = "uid://bwro7s8or2x2l"
+
+[node name="ChoiceBox" type="VBoxContainer" parent="InteractiveComponent" unique_id=1481324992 node_paths=PackedStringArray("buttons")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -175.5
+offset_right = 256.0
+offset_bottom = -27.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+script = ExtResource("3_7dndb")
+buttons = [NodePath("Button1"), NodePath("Button2"), NodePath("Button3"), NodePath("Button4")]
+metadata/_custom_type_script = "uid://bq2fnpig4buuw"
+
+[node name="Button1" type="Button" parent="InteractiveComponent/ChoiceBox" unique_id=934305235]
+custom_minimum_size = Vector2(512, 0)
+layout_mode = 2
+text = "choice 1"
+
+[node name="Button2" type="Button" parent="InteractiveComponent/ChoiceBox" unique_id=557101722]
+layout_mode = 2
+text = "choice 2"
+
+[node name="Button3" type="Button" parent="InteractiveComponent/ChoiceBox" unique_id=862112274]
+layout_mode = 2
+text = "choice 3"
+
+[node name="Button4" type="Button" parent="InteractiveComponent/ChoiceBox" unique_id=887495433]
+layout_mode = 2
+text = "choice 4"
+
+[node name="DialogueBox" type="MarginContainer" parent="InteractiveComponent" unique_id=1285492361 node_paths=PackedStringArray("speaker_label", "content_label", "text_display_timer", "audio_stream_player")]
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
@@ -66,82 +107,66 @@ text_display_timer = NodePath("VBoxContainer/Timer")
 audio_stream_player = NodePath("AudioStreamPlayer")
 metadata/_custom_type_script = "uid://dbodlo3ye2xyj"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="DialogueBox" unique_id=2031320899]
+[node name="VBoxContainer" type="VBoxContainer" parent="InteractiveComponent/DialogueBox" unique_id=2031320899]
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="Speaker" type="Label" parent="DialogueBox/VBoxContainer" unique_id=282850077]
+[node name="Speaker" type="Label" parent="InteractiveComponent/DialogueBox/VBoxContainer" unique_id=282850077]
 layout_mode = 2
 theme_override_font_sizes/font_size = 28
 text = "CHARACTER"
 horizontal_alignment = 1
 
-[node name="Dialogue" type="HBoxContainer" parent="DialogueBox/VBoxContainer" unique_id=597847136]
+[node name="Dialogue" type="HBoxContainer" parent="InteractiveComponent/DialogueBox/VBoxContainer" unique_id=597847136]
 layout_mode = 2
 
-[node name="Content" type="Label" parent="DialogueBox/VBoxContainer/Dialogue" unique_id=848084838]
+[node name="Content" type="Label" parent="InteractiveComponent/DialogueBox/VBoxContainer/Dialogue" unique_id=848084838]
 custom_minimum_size = Vector2(0, 96)
 layout_mode = 2
 size_flags_horizontal = 3
 autowrap_mode = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="DialogueBox/VBoxContainer/Dialogue" unique_id=675721989]
+[node name="VBoxContainer" type="VBoxContainer" parent="InteractiveComponent/DialogueBox/VBoxContainer/Dialogue" unique_id=675721989]
 layout_mode = 2
 
-[node name="Buttons" type="HBoxContainer" parent="DialogueBox/VBoxContainer" unique_id=1938405714]
-layout_mode = 2
+[node name="Timer" type="Timer" parent="InteractiveComponent/DialogueBox/VBoxContainer" unique_id=1715929451]
+wait_time = 0.005
+one_shot = true
 
-[node name="load" type="Button" parent="DialogueBox/VBoxContainer/Buttons" unique_id=2120936257]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="InteractiveComponent/DialogueBox" unique_id=1993440992]
+stream = ExtResource("3_mafgb")
+volume_db = -20.0
+
+[node name="Buttons" type="HBoxContainer" parent="." unique_id=1938405714]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 598.0
+offset_right = 1072.0
+offset_bottom = 630.0
+
+[node name="load" type="Button" parent="Buttons" unique_id=2120936257]
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 text = "load"
 
-[node name="history" type="Button" parent="DialogueBox/VBoxContainer/Buttons" unique_id=297608235]
+[node name="history" type="Button" parent="Buttons" unique_id=297608235]
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 text = "history"
 
-[node name="Timer" type="Timer" parent="DialogueBox/VBoxContainer" unique_id=1715929451]
-wait_time = 0.005
-one_shot = true
+[node name="HistoryBox" type="ScrollContainer" parent="." unique_id=1080608910 node_paths=PackedStringArray("label")]
+clip_contents = false
+layout_mode = 0
+offset_left = 962.0
+offset_top = 75.0
+offset_right = 1133.0
+offset_bottom = 398.0
+mouse_filter = 0
+script = ExtResource("6_efj5v")
+label = NodePath("Label")
+metadata/_custom_type_script = "uid://ljvnqqodt45e"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="DialogueBox" unique_id=1993440992]
-stream = ExtResource("3_mafgb")
-volume_db = -20.0
-
-[node name="ChoiceBox" type="VBoxContainer" parent="." unique_id=1481324992 node_paths=PackedStringArray("buttons")]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -256.0
-offset_top = -164.0
-offset_right = 256.0
-offset_bottom = -39.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 16
-script = ExtResource("3_7dndb")
-buttons = [NodePath("Button1"), NodePath("Button2"), NodePath("Button3"), NodePath("Button4")]
-metadata/_custom_type_script = "uid://bq2fnpig4buuw"
-
-[node name="Button1" type="Button" parent="ChoiceBox" unique_id=934305235]
-custom_minimum_size = Vector2(512, 0)
+[node name="Label" type="Label" parent="HistoryBox" unique_id=170654883]
 layout_mode = 2
-text = "choice 1"
 
-[node name="Button2" type="Button" parent="ChoiceBox" unique_id=557101722]
-layout_mode = 2
-text = "choice 2"
-
-[node name="Button3" type="Button" parent="ChoiceBox" unique_id=862112274]
-layout_mode = 2
-text = "choice 3"
-
-[node name="Button4" type="Button" parent="ChoiceBox" unique_id=887495433]
-layout_mode = 2
-text = "choice 4"
-
-[connection signal="timeout" from="DialogueBox/VBoxContainer/Timer" to="DialogueBox" method="_on_timer_timeout"]
+[connection signal="timeout" from="InteractiveComponent/DialogueBox/VBoxContainer/Timer" to="InteractiveComponent/DialogueBox" method="_on_timer_timeout"]

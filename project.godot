@@ -17,12 +17,16 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-CharacterDB="*uid://c46xrnlyxdesm"
-StoryDB="*uid://ck40i4har10oe"
+SceneEnum="*uid://bl7l212idxee6"
 SceneManager="*uid://d1ulqh1j5qg2"
 CharacterEnum="*uid://dmjpda4f80e7n"
-SceneEnum="*uid://bl7l212idxee6"
+CharacterDB="*uid://c46xrnlyxdesm"
+BackgroundEnum="*uid://mvgyxo6mfky6"
+BackgroundDB="*uid://cuejx1yewvuie"
+SoundtrackEnum="*uid://bp06vtarduh2p"
+SoundtrackDB="*uid://mr6gov37fujj"
 StoryEnum="*uid://crpym8kgf2od"
+StoryDB="*uid://ck40i4har10oe"
 
 [editor_plugins]
 
